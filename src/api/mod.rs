@@ -403,7 +403,7 @@ pub async fn start_listener(config: &ServerConfig) -> Result<()> {
 
     let _server = rocket::build()
         .configure(rocket::Config {
-            port: config.port,
+            port: config.port.get() as u16,
             ..Default::default()
         })
         .mount("/", routes![
@@ -463,7 +463,7 @@ async fn main() -> Result<()> {
 
     // Create server configuration
     let config = ServerConfig {
-        port: 3000,
+        port: Port::new(5443).unwrap(),
         log_level: log::LevelFilter::Info,
         db_url: Url::parse("your_db_url").expect("Invalid URL"),
         env_override: false,
@@ -517,7 +517,7 @@ fn internal_error() -> Json<Error> {
 // JWT Authentication Guard implementation
 use rocket::request::{FromRequest, Outcome, Request};
 
-use crate::workspace::ServerConfig;
+use crate::workspace::{Port, ServerConfig};
 
 pub struct AuthenticatedUser {
     pub user_id: Uuid,
