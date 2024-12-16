@@ -1,4 +1,3 @@
-// src/main.rs
 use anyhow::{anyhow, Result};
 use log::{error, info};
 use rocket::{get, post, put, delete, patch, routes, State};
