@@ -6,8 +6,10 @@ use rocket::http::Status;
 use rocket::form::{Form, FromForm};
 use rocket::fs::TempFile;
 use serde::{Serialize, Deserialize};
+use url::Url;
 use uuid::Uuid;
 use chrono::{DateTime, Utc};
+use std::path::PathBuf;
 
 // Models
 #[derive(Debug, Serialize, Deserialize)]
@@ -463,6 +465,10 @@ async fn main() -> Result<()> {
     let config = ServerConfig {
         port: 3000,
         log_level: log::LevelFilter::Info,
+        db_url: Url::parse("your_db_url").expect("Invalid URL"),
+        env_override: false,
+        log_path: Some(PathBuf::from("your_log_path")),
+        use_http: true,
     };
 
     // Start the server
@@ -510,6 +516,8 @@ fn internal_error() -> Json<Error> {
 
 // JWT Authentication Guard implementation
 use rocket::request::{FromRequest, Outcome, Request};
+
+use crate::workspace::ServerConfig;
 
 pub struct AuthenticatedUser {
     pub user_id: Uuid,
