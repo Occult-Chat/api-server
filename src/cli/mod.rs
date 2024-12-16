@@ -1,8 +1,12 @@
-use crate::{ api::start_listener, db::start_db, workspace::{ get_config, is_initalized, ServerConfig } };
-use anyhow::{ Context, Ok, Result };
-use clap::{ Parser, Subcommand };
+use crate::{
+    api::start_listener,
+    db::start_db,
+    workspace::{get_config, is_initalized, ServerConfig},
+};
+use anyhow::{Context, Ok, Result};
+use clap::{Parser, Subcommand};
 use inquire::Confirm;
-use log::{ debug, info };
+use log::{debug, info};
 use prompt::create_config_interactive;
 pub mod prompt;
 
@@ -39,66 +43,64 @@ pub async fn run_cli() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
-        Some(Commands::Init { y }) =>
-            match (is_initalized(), y) {
-                (true, false) => {
-                    let confirm = Confirm::new(
-                        "A configuration file already exists, are you sure you want to overwrite it?"
-                    )
-                        .with_default(false)
-                        .prompt()?;
+        Some(Commands::Init { y }) => match (is_initalized(), y) {
+            (true, false) => {
+                let confirm = Confirm::new(
+                    "A configuration file already exists, are you sure you want to overwrite it?",
+                )
+                .with_default(false)
+                .prompt()?;
 
-                    match confirm {
-                        false => std::process::exit(0),
-                        true => {
-                            create_config_interactive()?;
-                            println!(
-                                "Use occult-server run to start your newly configured server!"
-                            );
-                            Ok(())
-                        }
+                match confirm {
+                    false => std::process::exit(0),
+                    true => {
+                        create_config_interactive()?;
+                        println!("Use occult-server run to start your newly configured server!");
+                        Ok(())
                     }
                 }
-                (false, false) => {
-                    if !get_config().is_ok() {
-                        let confirm = Confirm::new(
+            }
+            (false, false) => {
+                if !get_config().is_ok() {
+                    let confirm = Confirm::new(
                             "You are about to overwrite an invalid configuration. Are you sure this is what you want?"
                         )
                             .with_default(false)
                             .prompt()?;
-                        if !confirm {
-                            std::process::exit(0);
-                        }
+                    if !confirm {
+                        std::process::exit(0);
                     }
-                    create_config_interactive()?;
-                    Ok(())
                 }
-                _ => {
-                    unreachable!();
-                }
+                create_config_interactive()?;
+                Ok(())
             }
+            _ => {
+                unreachable!();
+            }
+        },
         Some(Commands::Run { daemon }) => {
             if daemon {
                 debug!("Server will be started as a background process");
             }
             info!("Running server");
             let config = get_config().unwrap_or_else(|e| {
-                let should_reconfigre = Confirm::new("Your configuration is invalid. would you like to reconfigure?")
-                    .with_default(true)
-                    .with_help_message(format!("{e}").as_str())
-                    .prompt().expect("Failed to obtain user confirmation");
+                let should_reconfigre =
+                    Confirm::new("Your configuration is invalid. would you like to reconfigure?")
+                        .with_default(true)
+                        .with_help_message(format!("{e}").as_str())
+                        .prompt()
+                        .expect("Failed to obtain user confirmation");
                 if should_reconfigre {
-                    prompt::create_config_interactive().ok()
+                    create_config_interactive().expect("")
                 } else {
                     eprintln!("Please edit your server.config.yml and correct the above errors");
                     std::process::exit(0)
                 }
-            }).expect("Failed to get or init config");
+            });
             debug!("server_config = {config:#?}");
-            let api_config = ServerConfig::from(config.clone());
-            let listener = start_listener(&api_config);
+            let listener = start_listener(&config);
             let db = start_db(&config);
-            tokio::join!(listener,db).0.expect("Failed");
+            tokio::join!(listener, db).0.expect("Failed");
             Ok(())
         }
         None => {

@@ -4,16 +4,16 @@ use std::io::Write;
 use std::path::PathBuf;
 use std::str::FromStr;
 
+use anyhow::anyhow;
 use anyhow::Context;
 use anyhow::Result;
-use anyhow::anyhow;
 
 use log::debug;
 use log::error;
 use serde::Deserialize;
 use serde::Serialize;
-use url::Url;
 use thiserror::Error;
+use url::Url;
 
 #[derive(Debug, Error)]
 pub enum ConfigError {
@@ -79,36 +79,36 @@ pub struct ServerConfig {
 
 impl Default for ServerConfig {
     fn default() -> Self {
-
         Self {
-
             port: 8000,
             db_url: Url::from_str("https://0.0.0.0:8000").unwrap(),
             use_http: true,
             log_level: log::LevelFilter::Info,
             log_path: Some(PathBuf::from_str("./").unwrap()),
-            env_override: true
+            env_override: true,
         }
     }
 }
 
-pub fn get_config() -> Result<Option<ServerConfig>> {
+pub fn get_config() -> Result<ServerConfig> {
     let mut config_path = get_working_dir()?;
     if !config_path.exists() {
-        debug!("the occult config path did not yet exist, this is likely the first run");
-        return Ok(None);
+        error!("the occult config path did not yet exist, this is likely the first run");
+        return Err(anyhow!(
+            "the occult config path did not yet exist, this is likely the first run"
+        ));
     }
     config_path.push("server/config.server.yml");
     if !config_path.exists() {
-        debug!("the server config did not exist: {config_path:#?}");
-        return Ok(None);
+        error!("the server config did not exist: {config_path:#?}");
+        return Err(anyhow!("the server config did not exist: {config_path:#?}"));
     }
     let config =
         fs::read_to_string(config_path).context("Failed to read configuration file to string")?;
     match serde_yml::from_str(&config) {
         Ok(config) => {
             debug!("server config has been serialized: Config: {config:#?}");
-            return Ok(Some(config));
+            return Ok(config);
         }
         Err(e) => {
             error!("Could not serialize configuration: {e}");
@@ -122,13 +122,7 @@ pub fn is_initalized() -> bool {
     config_path.push("server/config.server.yml");
 
     match get_config() {
-        Ok(config) => {
-            if config.is_some() {
-                true
-            } else {
-                false
-            }
-        }
+        Ok(_) => true,
         Err(e) => {
             error!("An error has occured, assuming we are not initalized: {e}");
             false
