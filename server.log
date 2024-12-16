@@ -1,0 +1,558 @@
+[12:16:00:40:33 Thread#1/INFO] >> Running server
+[12:16:00:40:53 Thread#1/INFO] >> Running server
+[12:16:00:41:18 Thread#1/INFO] >> Running server
+[12:16:00:51:01 Thread#1/INFO] >> Running server
+[12:16:00:51:47 Thread#1/INFO] >> Running server
+[12:16:00:51:59 Thread#1/INFO] >> Configured for debug.
+[12:16:00:51:59 Thread#1/INFO] >> address: 127.0.0.1
+[12:16:00:51:59 Thread#1/INFO] >> port: 8000
+[12:16:00:51:59 Thread#1/INFO] >> workers: 32
+[12:16:00:51:59 Thread#1/INFO] >> max blocking threads: 512
+[12:16:00:51:59 Thread#1/INFO] >> ident: Rocket
+[12:16:00:51:59 Thread#1/INFO] >> IP header: X-Real-IP
+[12:16:00:51:59 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:16:00:51:59 Thread#1/INFO] >> temp dir: C:\Users\redst\AppData\Local\Temp\
+[12:16:00:51:59 Thread#1/INFO] >> http/2: true
+[12:16:00:51:59 Thread#1/INFO] >> keep-alive: 5s
+[12:16:00:51:59 Thread#1/INFO] >> tls: disabled
+[12:16:00:51:59 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, grace = 2s, mercy = 3s
+[12:16:00:51:59 Thread#1/INFO] >> log level: normal
+[12:16:00:51:59 Thread#1/INFO] >> cli colors: true
+[12:16:00:51:59 Thread#1/INFO] >> Routes:
+[12:16:00:51:59 Thread#1/INFO] >> (identity) GET /
+[12:16:00:51:59 Thread#1/INFO] >> (get_package) GET /get/<package>/<version>
+[12:16:00:51:59 Thread#1/INFO] >> Fairings:
+[12:16:00:51:59 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:16:00:51:59 Thread#1/INFO] >> Shield:
+[12:16:00:51:59 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:16:00:51:59 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:16:00:51:59 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:16:00:51:59 Thread#1/WARN] >> Rocket has launched from http://127.0.0.1:8000
+[12:16:00:52:07 Thread#33/WARN] >> Received SIGINT. Requesting shutdown.
+[12:16:00:52:07 Thread#1/INFO] >> Shutdown requested. Waiting for pending I/O...
+[12:16:00:52:09 Thread#1/INFO] >> Graceful shutdown completed successfully.
+[12:16:00:52:43 Thread#1/INFO] >> Running server
+[12:16:00:52:43 Thread#1/INFO] >> Configured for debug.
+[12:16:00:52:43 Thread#1/INFO] >> address: 127.0.0.1
+[12:16:00:52:43 Thread#1/INFO] >> port: 7000
+[12:16:00:52:43 Thread#1/INFO] >> workers: 32
+[12:16:00:52:43 Thread#1/INFO] >> max blocking threads: 512
+[12:16:00:52:43 Thread#1/INFO] >> ident: Rocket
+[12:16:00:52:43 Thread#1/INFO] >> IP header: X-Real-IP
+[12:16:00:52:43 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:16:00:52:43 Thread#1/INFO] >> temp dir: C:\Users\redst\AppData\Local\Temp\
+[12:16:00:52:43 Thread#1/INFO] >> http/2: true
+[12:16:00:52:43 Thread#1/INFO] >> keep-alive: 5s
+[12:16:00:52:43 Thread#1/INFO] >> tls: disabled
+[12:16:00:52:43 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, grace = 2s, mercy = 3s
+[12:16:00:52:43 Thread#1/INFO] >> log level: normal
+[12:16:00:52:43 Thread#1/INFO] >> cli colors: true
+[12:16:00:52:43 Thread#1/INFO] >> Routes:
+[12:16:00:52:43 Thread#1/INFO] >> (identity) GET /
+[12:16:00:52:43 Thread#1/INFO] >> (get_package) GET /get/<package>/<version>
+[12:16:00:52:43 Thread#1/INFO] >> Fairings:
+[12:16:00:52:43 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:16:00:52:43 Thread#1/INFO] >> Shield:
+[12:16:00:52:43 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:16:00:52:43 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:16:00:52:43 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:16:00:52:43 Thread#1/WARN] >> Rocket has launched from http://127.0.0.1:7000
+[12:16:01:12:33 Thread#33/WARN] >> Received SIGINT. Requesting shutdown.
+[12:16:01:12:33 Thread#1/INFO] >> Shutdown requested. Waiting for pending I/O...
+[12:16:01:12:33 Thread#1/INFO] >> Graceful shutdown completed successfully.
+[12:16:03:13:30 Thread#1/INFO] >> Running server
+[12:16:03:13:30 Thread#1/ERR] >> Could not serialize configuration: missing field `env_override`
+[12:16:03:18:48 Thread#1/INFO] >> Running server
+[12:16:03:18:48 Thread#1/ERR] >> Could not serialize configuration: missing field `env_override`
+[12:16:03:19:14 Thread#1/INFO] >> Running server
+[12:16:03:19:14 Thread#1/ERR] >> Could not serialize configuration: missing field `env_override`
+[12:16:03:23:27 Thread#1/INFO] >> Running server
+[12:16:03:25:03 Thread#1/INFO] >> Running server
+[12:16:03:25:57 Thread#1/INFO] >> Running server
+[12:16:03:26:28 Thread#1/INFO] >> Running server
+[12:16:03:26:28 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:16:03:26:28 Thread#1/DEBUG] >> server_config = Some(
+    ServerConfig {
+        port: 8000,
+        db_url: Url {
+            scheme: "https",
+            cannot_be_a_base: false,
+            username: "",
+            password: None,
+            host: Some(
+                Domain(
+                    "example.com",
+                ),
+            ),
+            port: None,
+            path: "/",
+            query: None,
+            fragment: None,
+        },
+        use_http: false,
+        log_level: Trace,
+        log_path: Some(
+            "./",
+        ),
+        env_override: true,
+    },
+)
+[12:16:03:26:28 Thread#1/DEBUG] >> Config found
+[12:16:03:33:25 Thread#1/INFO] >> Running server
+[12:16:03:33:25 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:16:03:33:25 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:16:03:33:25 Thread#1/INFO] >> Configured for debug.
+[12:16:03:33:25 Thread#1/INFO] >> address: 127.0.0.1
+[12:16:03:33:25 Thread#1/INFO] >> port: 8000
+[12:16:03:33:25 Thread#1/INFO] >> workers: 32
+[12:16:03:33:25 Thread#1/INFO] >> max blocking threads: 512
+[12:16:03:33:25 Thread#1/INFO] >> ident: Rocket
+[12:16:03:33:25 Thread#1/INFO] >> IP header: X-Real-IP
+[12:16:03:33:25 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:16:03:33:25 Thread#1/INFO] >> temp dir: C:\Users\redst\AppData\Local\Temp\
+[12:16:03:33:25 Thread#1/INFO] >> http/2: true
+[12:16:03:33:25 Thread#1/INFO] >> keep-alive: 5s
+[12:16:03:33:25 Thread#1/INFO] >> tls: disabled
+[12:16:03:33:25 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, grace = 2s, mercy = 3s
+[12:16:03:33:25 Thread#1/INFO] >> log level: normal
+[12:16:03:33:25 Thread#1/INFO] >> cli colors: true
+[12:16:03:33:25 Thread#1/INFO] >> Routes:
+[12:16:03:33:25 Thread#1/INFO] >> (identity) GET /
+[12:16:03:33:25 Thread#1/INFO] >> (get_package) GET /get/<package>/<version>
+[12:16:03:33:25 Thread#1/INFO] >> Fairings:
+[12:16:03:33:25 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:16:03:33:25 Thread#1/INFO] >> Shield:
+[12:16:03:33:25 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:16:03:33:25 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:16:03:33:25 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:16:03:33:25 Thread#1/WARN] >> Rocket has launched from http://127.0.0.1:8000
+[12:16:03:33:25 Thread#1/INFO] >> Starting DB on port 8000
+[12:16:03:36:02 Thread#1/INFO] >> Running server
+[12:16:03:36:02 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:16:03:36:02 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:16:03:36:02 Thread#1/INFO] >> Configured for debug.
+[12:16:03:36:02 Thread#1/INFO] >> address: 127.0.0.1
+[12:16:03:36:02 Thread#1/INFO] >> port: 8000
+[12:16:03:36:02 Thread#1/INFO] >> workers: 32
+[12:16:03:36:02 Thread#1/INFO] >> max blocking threads: 512
+[12:16:03:36:02 Thread#1/INFO] >> ident: Rocket
+[12:16:03:36:02 Thread#1/INFO] >> IP header: X-Real-IP
+[12:16:03:36:02 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:16:03:36:02 Thread#1/INFO] >> temp dir: C:\Users\redst\AppData\Local\Temp\
+[12:16:03:36:02 Thread#1/INFO] >> http/2: true
+[12:16:03:36:02 Thread#1/INFO] >> keep-alive: 5s
+[12:16:03:36:02 Thread#1/INFO] >> tls: disabled
+[12:16:03:36:02 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, grace = 2s, mercy = 3s
+[12:16:03:36:02 Thread#1/INFO] >> log level: normal
+[12:16:03:36:02 Thread#1/INFO] >> cli colors: true
+[12:16:03:36:02 Thread#1/INFO] >> Routes:
+[12:16:03:36:02 Thread#1/INFO] >> (identity) GET /
+[12:16:03:36:02 Thread#1/INFO] >> (get_package) GET /get/<package>/<version>
+[12:16:03:36:02 Thread#1/INFO] >> Fairings:
+[12:16:03:36:02 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:16:03:36:02 Thread#1/INFO] >> Shield:
+[12:16:03:36:02 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:16:03:36:02 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:16:03:36:02 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:16:03:36:02 Thread#1/WARN] >> Rocket has launched from http://127.0.0.1:8000
+[12:16:03:36:02 Thread#1/INFO] >> Starting DB on port 8000
+[12:16:03:36:02 Thread#33/TRACE] >> Conn::read_head
+[12:16:03:36:02 Thread#33/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:16:03:36:02 Thread#2/TRACE] >> Conn::read_head
+[12:16:03:36:02 Thread#2/TRACE] >> received 458 bytes
+[12:16:03:36:02 Thread#2/TRACE] >> parse_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> -> parse_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> Request.parse bytes=458
+[12:16:03:36:02 Thread#2/TRACE] >> Request.parse Complete(458)
+[12:16:03:36:02 Thread#2/TRACE] >> <- parse_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> -- parse_headers;
+[12:16:03:36:02 Thread#2/DEBUG] >> parsed 14 headers
+[12:16:03:36:02 Thread#2/DEBUG] >> incoming body is empty
+[12:16:03:36:02 Thread#2/DEBUG] >> received request: Request {
+    method: GET,
+    uri: /,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "accept-language": "en-US,en;q=0.5",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "dnt": "1",
+        "sec-gpc": "1",
+        "connection": "keep-alive",
+        "upgrade-insecure-requests": "1",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "priority": "u=0, i",
+    },
+    body: Body(
+        Empty,
+    ),
+}
+[12:16:03:36:02 Thread#2/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[12:16:03:36:02 Thread#2/INFO] >> GET / text/html:
+[12:16:03:36:02 Thread#2/INFO] >> Matched: (identity) GET /
+[12:16:03:36:02 Thread#2/INFO] >> Outcome: Success(200 OK)
+[12:16:03:36:02 Thread#2/DEBUG] >> sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "permissions-policy": "interest-cohort=()",
+        "content-length": "13",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:16:03:36:02 Thread#2/INFO] >> Response succeeded.
+[12:16:03:36:02 Thread#2/TRACE] >> encode_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> -> encode_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[12:16:03:36:02 Thread#2/TRACE] >> <- encode_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> -- encode_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> sized write, len = 13
+[12:16:03:36:02 Thread#2/TRACE] >> buffer.queue self.len=235 buf.len=13
+[12:16:03:36:02 Thread#2/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:16:03:36:02 Thread#2/DEBUG] >> flushed 248 bytes
+[12:16:03:36:02 Thread#2/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[12:16:03:36:02 Thread#2/TRACE] >> Conn::read_head
+[12:16:03:36:02 Thread#2/TRACE] >> received 458 bytes
+[12:16:03:36:02 Thread#2/TRACE] >> parse_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> -> parse_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> Request.parse bytes=458
+[12:16:03:36:02 Thread#2/TRACE] >> Request.parse Complete(458)
+[12:16:03:36:02 Thread#2/TRACE] >> <- parse_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> -- parse_headers;
+[12:16:03:36:02 Thread#2/DEBUG] >> parsed 13 headers
+[12:16:03:36:02 Thread#2/DEBUG] >> incoming body is empty
+[12:16:03:36:02 Thread#2/DEBUG] >> received request: Request {
+    method: GET,
+    uri: /favicon.ico,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
+        "accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+        "accept-language": "en-US,en;q=0.5",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "dnt": "1",
+        "sec-gpc": "1",
+        "connection": "keep-alive",
+        "referer": "http://localhost:8000/",
+        "sec-fetch-dest": "image",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-site": "same-origin",
+        "priority": "u=6",
+    },
+    body: Body(
+        Empty,
+    ),
+}
+[12:16:03:36:02 Thread#2/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[12:16:03:36:02 Thread#2/INFO] >> GET /favicon.ico image/avif:
+[12:16:03:36:02 Thread#2/ERR] >> No matching routes for GET /favicon.ico image/avif.
+[12:16:03:36:02 Thread#2/WARN] >> No 404 catcher registered. Using Rocket default.
+[12:16:03:36:02 Thread#2/DEBUG] >> sending response: Response {
+    status: 404,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "permissions-policy": "interest-cohort=()",
+        "content-length": "435",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:16:03:36:02 Thread#2/INFO] >> Response succeeded.
+[12:16:03:36:02 Thread#2/TRACE] >> encode_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> -> encode_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> Server::encode status=404, body=Some(Unknown), req_method=Some(GET)
+[12:16:03:36:02 Thread#2/TRACE] >> <- encode_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> -- encode_headers;
+[12:16:03:36:02 Thread#2/TRACE] >> sized write, len = 435
+[12:16:03:36:02 Thread#2/TRACE] >> buffer.queue self.len=242 buf.len=435
+[12:16:03:36:02 Thread#2/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:16:03:36:02 Thread#2/DEBUG] >> flushed 677 bytes
+[12:16:03:36:02 Thread#2/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[12:16:03:36:21 Thread#2/TRACE] >> disable_keep_alive; closing idle connection
+[12:16:03:36:21 Thread#2/TRACE] >> State::close()
+[12:16:03:36:21 Thread#2/TRACE] >> State::close_read()
+[12:16:03:36:21 Thread#2/TRACE] >> State::close_write()
+[12:16:03:36:21 Thread#2/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:16:03:36:21 Thread#2/TRACE] >> shut down IO complete
+[12:16:03:36:36 Thread#1/INFO] >> Running server
+[12:16:03:36:36 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:16:03:36:36 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:16:03:36:36 Thread#1/INFO] >> Configured for debug.
+[12:16:03:36:36 Thread#1/INFO] >> address: 127.0.0.1
+[12:16:03:36:36 Thread#1/INFO] >> port: 8000
+[12:16:03:36:36 Thread#1/INFO] >> workers: 32
+[12:16:03:36:36 Thread#1/INFO] >> max blocking threads: 512
+[12:16:03:36:36 Thread#1/INFO] >> ident: Rocket
+[12:16:03:36:36 Thread#1/INFO] >> IP header: X-Real-IP
+[12:16:03:36:36 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:16:03:36:36 Thread#1/INFO] >> temp dir: C:\Users\redst\AppData\Local\Temp\
+[12:16:03:36:36 Thread#1/INFO] >> http/2: true
+[12:16:03:36:36 Thread#1/INFO] >> keep-alive: 5s
+[12:16:03:36:36 Thread#1/INFO] >> tls: disabled
+[12:16:03:36:36 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, grace = 2s, mercy = 3s
+[12:16:03:36:36 Thread#1/INFO] >> log level: normal
+[12:16:03:36:36 Thread#1/INFO] >> cli colors: true
+[12:16:03:36:36 Thread#1/INFO] >> Routes:
+[12:16:03:36:36 Thread#1/INFO] >> (identity) GET /
+[12:16:03:36:36 Thread#1/INFO] >> (get_package) GET /get/<package>/<version>
+[12:16:03:36:36 Thread#1/INFO] >> Fairings:
+[12:16:03:36:36 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:16:03:36:36 Thread#1/INFO] >> Shield:
+[12:16:03:36:36 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:16:03:36:36 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:16:03:36:36 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:16:03:36:36 Thread#1/WARN] >> Rocket has launched from http://127.0.0.1:8000
+[12:16:03:36:36 Thread#1/INFO] >> Starting DB on port 8000
+[12:16:03:37:45 Thread#1/INFO] >> Running server
+[12:16:03:37:45 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:16:03:37:45 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:16:03:37:45 Thread#1/INFO] >> Configured for debug.
+[12:16:03:37:45 Thread#1/INFO] >> address: 127.0.0.1
+[12:16:03:37:45 Thread#1/INFO] >> port: 8000
+[12:16:03:37:45 Thread#1/INFO] >> workers: 32
+[12:16:03:37:45 Thread#1/INFO] >> max blocking threads: 512
+[12:16:03:37:45 Thread#1/INFO] >> ident: Rocket
+[12:16:03:37:45 Thread#1/INFO] >> IP header: X-Real-IP
+[12:16:03:37:45 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:16:03:37:45 Thread#1/INFO] >> temp dir: C:\Users\redst\AppData\Local\Temp\
+[12:16:03:37:45 Thread#1/INFO] >> http/2: true
+[12:16:03:37:45 Thread#1/INFO] >> keep-alive: 5s
+[12:16:03:37:45 Thread#1/INFO] >> tls: disabled
+[12:16:03:37:45 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, grace = 2s, mercy = 3s
+[12:16:03:37:45 Thread#1/INFO] >> log level: normal
+[12:16:03:37:45 Thread#1/INFO] >> cli colors: true
+[12:16:03:37:45 Thread#1/INFO] >> Routes:
+[12:16:03:37:45 Thread#1/INFO] >> (identity) GET /
+[12:16:03:37:45 Thread#1/INFO] >> (get_package) GET /get/<package>/<version>
+[12:16:03:37:45 Thread#1/INFO] >> Fairings:
+[12:16:03:37:45 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:16:03:37:45 Thread#1/INFO] >> Shield:
+[12:16:03:37:45 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:16:03:37:45 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:16:03:37:45 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:16:03:37:45 Thread#1/WARN] >> Rocket has launched from http://127.0.0.1:8000
+[12:16:03:37:45 Thread#1/ERR] >> Starting DB on port 8000

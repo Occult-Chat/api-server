@@ -1,0 +1,26 @@
+[package]
+name = "occult-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rocket = { version = "0.5.1", features = ["json"] }
+tokio = { version = "1.41.1", features = ["full", "rt-multi-thread"] }
+anyhow = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+dirs-next = { workspace = true }
+log = { workspace = true }
+env_logger = { workspace = true }
+rayon.workspace = true
+versions = { version = "6.3.2", features = ["serde"] }
+url = { version = "2.5.4", features = ["serde"] }
+clap = { version = "4.5.23", features = ["derive"] }
+toml.workspace = true
+inquire = "0.7.5"
+serde_yml = "0.0.12"
+colored.workspace = true
+chrono = "0.4.39"
+thiserror.workspace = true
+uuid = { version = "1.11.0", features = ["serde"] }
+sqlx = { version = "0.8.2", features = ["mysql", "runtime-tokio"] }
+oauth2 = "4.4.2"
