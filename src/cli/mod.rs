@@ -1,4 +1,4 @@
-use crate::{ api::start_listener, workspace::{ get_config, is_initalized }, db::start_db };
+use crate::{ api::start_listener, db::start_db, workspace::{ get_config, is_initalized, ServerConfig } };
 use anyhow::{ Context, Ok, Result };
 use clap::{ Parser, Subcommand };
 use inquire::Confirm;
@@ -95,7 +95,8 @@ pub async fn run_cli() -> Result<()> {
                 }
             }).expect("Failed to get or init config");
             debug!("server_config = {config:#?}");
-            let listener = start_listener(&config);
+            let api_config = ServerConfig::from(config.clone());
+            let listener = start_listener(&api_config);
             let db = start_db(&config);
             tokio::join!(listener,db).0.expect("Failed");
             Ok(())

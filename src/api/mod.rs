@@ -1,9 +1,9 @@
 use anyhow::{anyhow, Result};
 use log::{error, info};
-use rocket::{get, post, put, delete, patch, routes, State};
+use rocket::{delete, get, patch, post, put, routes, FromFormField, State};
 use rocket::serde::json::Json;
 use rocket::http::Status;
-use rocket::form::Form;
+use rocket::form::{Form, FromForm};
 use rocket::fs::TempFile;
 use serde::{Serialize, Deserialize};
 use uuid::Uuid;
@@ -23,7 +23,7 @@ pub struct User {
     updated_at: DateTime<Utc>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, FromFormField)]
 #[serde(rename_all = "lowercase")]
 pub enum UserStatus {
     Online,
@@ -394,12 +394,6 @@ async fn upload_attachments(
     Err(Status::NotImplemented)
 }
 
-// Server Configuration
-pub struct ServerConfig {
-    port: u16,
-    log_level: log::LevelFilter,
-}
-
 pub async fn start_listener(config: &ServerConfig) -> Result<()> {
     let log_level = &config.log_level.as_str().to_lowercase();
     println!("Starting occult server. Current log level: {log_level}");
@@ -478,7 +472,7 @@ async fn main() -> Result<()> {
 }
 
 // Error handling implementation
-#[catch(404)]
+#[rocket::catch(404)]
 fn not_found() -> Json<Error> {
     Json(Error {
         code: "NOT_FOUND".to_string(),
@@ -487,7 +481,7 @@ fn not_found() -> Json<Error> {
     })
 }
 
-#[catch(401)]
+#[rocket::catch(401)]
 fn unauthorized() -> Json<Error> {
     Json(Error {
         code: "UNAUTHORIZED".to_string(),
@@ -496,7 +490,7 @@ fn unauthorized() -> Json<Error> {
     })
 }
 
-#[catch(403)]
+#[rocket::catch(403)]
 fn forbidden() -> Json<Error> {
     Json(Error {
         code: "FORBIDDEN".to_string(),
@@ -505,7 +499,7 @@ fn forbidden() -> Json<Error> {
     })
 }
 
-#[catch(500)]
+#[rocket::catch(500)]
 fn internal_error() -> Json<Error> {
     Json(Error {
         code: "INTERNAL_SERVER_ERROR".to_string(),

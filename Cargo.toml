@@ -21,6 +21,7 @@ serde_yml = "0.0.12"
 colored.workspace = true
 chrono = "0.4.39"
 thiserror.workspace = true
-uuid = { version = "1.11.0", features = ["serde"] }
+uuid = { version = "1.11.0", features = ["serde", "v4"] }
 sqlx = { version = "0.8.2", features = ["mysql", "runtime-tokio"] }
 oauth2 = "4.4.2"
+serde_json = "1.0.133"
