@@ -1,17 +1,41 @@
 use std::{path::PathBuf, str::FromStr};
 
-use crate::workspace::{self, get_server_dir, ServerConfig};
-use anyhow::{Context, Result};
+use crate::workspace::{self, get_server_dir, Port, ServerConfig};
+use anyhow::{anyhow, Context, Result};
 use inquire::{Confirm, Select, Text};
 
-use log::debug;
+use log::{debug, error};
 use url::Url;
 
 pub fn create_config_interactive() -> Result<ServerConfig> {
-    let port: u16 = Text::new("Enter the port number you would like the server to run on:")
-        .with_default("8000")
-        .prompt()?
-        .parse()?;
+    // let port: u16 = loop {
+    //     match Text::new("Enter the port number you would like the server to run on:")
+    //     .with_default("8000")
+    //     .prompt()
+    //     .and_then(|input: String| input.parse::<u32>().map_err(|e|{e.into()}))
+    //     {
+    //         Ok(port) => todo!(),
+    //         Err(_) => todo!(),
+    //     }
+    // }
+    let port: Port = loop {
+        match Text::new("Enter the port number you would like your server to run on:")
+            .with_default("5443")
+            .prompt()
+            .and_then(|input| {
+                input
+                    .parse::<u16>()
+                    .map_err(|e| inquire::InquireError::Custom(format!("Invalud port number: {e}").into()))
+            }) {
+            Ok(port) => {
+                match Port::new(port.into()) {
+                    Ok(p) => break p,
+                    Err(e) => eprintln!("{e}"),
+                }
+            },
+            Err(e) => error!("{e}"),
+        }
+    };
 
     let input_url = Text::new("What will the  for your repository be?")
         .with_initial_value("https://")
@@ -43,7 +67,9 @@ pub fn create_config_interactive() -> Result<ServerConfig> {
             }
         })?;
 
-    let env_override = Confirm::new("Would you like to allow enviornment variables to override configuration options?")
+    let env_override = Confirm::new(
+        "Would you like to allow enviornment variables to override configuration options?",
+    )
     .with_default(true)
     .with_help_message("WARNING: DISABLING THIS WILL BREAK AUTOMATION (such as a docker)")
     .prompt()?;
@@ -55,7 +81,6 @@ pub fn create_config_interactive() -> Result<ServerConfig> {
         log_path,
         db_url,
         env_override,
-
     };
     let config_path = get_server_dir().context("Failed to obtain config path")?;
 
@@ -70,4 +95,3 @@ pub fn create_config_interactive() -> Result<ServerConfig> {
 pub fn create_config() -> ServerConfig {
     ServerConfig::default()
 }
-

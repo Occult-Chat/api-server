@@ -12,7 +12,7 @@ fn strip_color_characters(input: String) -> String {
         if ch == '\x1b' {
             chars.next();
             if let Some(&'[') = chars.peek() {
-                chars.next(); 
+                chars.next();
                 while let Some(&ch) = chars.peek() {
                     if ch.is_ascii_alphabetic() {
                         chars.next(); // skip alphabetic characers
@@ -33,20 +33,20 @@ fn strip_color_characters(input: String) -> String {
 pub static LOGGER: ServerLogger = ServerLogger;
 
 pub fn init() -> Result<(), SetLoggerError> {
-    log::set_logger(&LOGGER).map(|()| log::set_max_level(LevelFilter::Trace))
+    log::set_logger(&LOGGER).map(|()| log::set_max_level(LevelFilter::Debug))
 }
 
 impl log::Log for ServerLogger {
     fn enabled(&self, metadata: &log::Metadata) -> bool {
-        metadata.level() <= log::Level::Trace
+        metadata.level() <= log::Level::Debug
     }
 
     fn log(&self, record: &log::Record) {
         if self.enabled(record.metadata()) {
             let level = match record.level() {
-                log::Level::Error => "ERR".bold().bright_red(),
+                log::Level::Error => "ERROR".bold().bright_red(),
                 log::Level::Warn => "WARN".bold().bright_yellow(),
-                log::Level::Info => "INFO".bold().bright_white(),
+                log::Level::Info => "INFO".bold().bright_green(),
                 log::Level::Debug => "DEBUG".bold().bright_blue(),
                 log::Level::Trace => "TRACE".bold().italic().bright_black(),
             };
