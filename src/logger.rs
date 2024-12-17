@@ -44,7 +44,7 @@ impl log::Log for ServerLogger {
     fn log(&self, record: &log::Record) {
         if self.enabled(record.metadata()) {
             let level = match record.level() {
-                log::Level::Error => "ERR".bold().bright_red(),
+                log::Level::Error => "ERROR".bold().bright_red(),
                 log::Level::Warn => "WARN".bold().bright_yellow(),
                 log::Level::Info => "INFO".bold().bright_white(),
                 log::Level::Debug => "DEBUG".bold().bright_blue(),

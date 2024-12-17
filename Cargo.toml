@@ -22,6 +22,7 @@ colored.workspace = true
 chrono = "0.4.39"
 thiserror.workspace = true
 uuid = { version = "1.11.0", features = ["serde", "v4"] }
-sqlx = { version = "0.8.2", features = ["mysql", "runtime-tokio"] }
+sqlx = { version = "0.8.2", features = ["mysql", "runtime-tokio", "runtime-tokio-rustls", "uuid", "chrono"] }
 oauth2 = "4.4.2"
 serde_json = "1.0.133"
+rand = "0.8.5"
