@@ -1,3 +1,4 @@
+use std::fmt::write;
 use std::fs;
 use std::fs::File;
 use std::io::Write;
@@ -39,6 +40,12 @@ impl Port {
     }
 }
 
+impl std::fmt::Display for Port {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}",self.0)
+    }
+}
+
 impl FromStr for Port {
     type Err = ConfigError;
 
@@ -72,25 +79,38 @@ impl std::fmt::Display for Port {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ServerConfig {
-    pub port: Port,
     // Base url the repository is hosted at
     pub db_url: Url,
     // Define if the server has a cert
+    pub http_port: Port,
     pub use_http: bool,
     pub log_level: log::LevelFilter,
     pub log_path: Option<PathBuf>,
     pub env_override: bool,
+    
+    // Base url the DB is hosted at
+    pub db_url: String,
+    pub db_port: Port,
+    
+    // Credentials for the database
+    pub db_user: String,
+    pub db_pass: String,
+    pub db_name: String,
 }
 
 impl Default for ServerConfig {
     fn default() -> Self {
         Self {
-            port: Port(5443),
-            db_url: Url::from_str("https://0.0.0.0:8000").unwrap(),
+            http_port: Port(8000),
+            db_url: "localhost".to_string(),
             use_http: true,
             log_level: log::LevelFilter::Info,
             log_path: Some(PathBuf::from_str("./").unwrap()),
             env_override: true,
+            db_port: Port(3306),
+            db_user: "occult".to_string(),
+            db_pass: "occult".to_string(),
+            db_name: "occult_db".to_string()
         }
     }
 }

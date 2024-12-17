@@ -22,10 +22,7 @@ colored.workspace = true
 chrono = "0.4.39"
 thiserror.workspace = true
 uuid = { version = "1.11.0", features = ["serde", "v4"] }
-sqlx = { version = "0.8.2", features = ["mysql", "runtime-tokio", "tls-rustls"] }
+sqlx = { version = "0.8.2", features = ["mysql", "runtime-tokio", "runtime-tokio-rustls", "uuid", "chrono"] }
 oauth2 = "4.4.2"
 serde_json = "1.0.133"
-rustls = { version = "0.23.20", features = ["ring", "zlib"] }
-tokio-rustls = { version = "0.26.1", features = ["ring"] }
-zlib-rs = "0.4.1"
-x509-parser = "0.16.0"
+rand = "0.8.5"

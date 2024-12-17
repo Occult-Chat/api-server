@@ -9,20 +9,22 @@ use serde::{Serialize, Deserialize};
 use url::Url;
 use uuid::Uuid;
 use chrono::{DateTime, Utc};
+use std::net::{IpAddr, Ipv4Addr};
 use std::path::PathBuf;
+use std::str::FromStr;
 
 // Models
 #[derive(Debug, Serialize, Deserialize)]
 pub struct User {
-    id: Uuid,
-    username: String,
-    display_name: Option<String>,
-    email: String,
-    avatar: Option<String>,
-    status: UserStatus,
-    custom_status: Option<String>,
-    created_at: DateTime<Utc>,
-    updated_at: DateTime<Utc>,
+    pub id: Uuid,
+    pub username: String,
+    pub display_name: Option<String>,
+    pub email: String,
+    pub avatar: Option<String>,
+    pub status: UserStatus,
+    pub custom_status: Option<String>,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize, FromFormField)]
@@ -36,28 +38,28 @@ pub enum UserStatus {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Server {
-    id: Uuid,
-    name: String,
-    description: Option<String>,
-    icon: Option<String>,
-    owner_id: Uuid,
-    created_at: DateTime<Utc>,
-    updated_at: DateTime<Utc>,
+    pub id: Uuid,
+    pub name: String,
+    pub description: Option<String>,
+    pub icon: Option<String>,
+    pub owner_id: Uuid,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Channel {
-    id: Uuid,
-    name: String,
+    pub id: Uuid,
+    pub name: String,
     #[serde(rename = "type")]
-    channel_type: ChannelType,
-    server_id: Uuid,
-    topic: Option<String>,
-    slow_mode: Option<i32>,
-    is_private: bool,
-    last_message_id: Option<Uuid>,
-    created_at: DateTime<Utc>,
-    updated_at: DateTime<Utc>,
+    pub channel_type: ChannelType,
+    pub server_id: Uuid,
+    pub topic: Option<String>,
+    pub slow_mode: Option<i32>,
+    pub is_private: bool,
+    pub last_message_id: Option<Uuid>,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -70,31 +72,31 @@ pub enum ChannelType {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Message {
-    id: Uuid,
-    content: String,
-    author_id: Uuid,
-    channel_id: Uuid,
-    reply_to_id: Option<Uuid>,
-    is_pinned: bool,
-    created_at: DateTime<Utc>,
-    edited_at: Option<DateTime<Utc>>,
-    attachments: Vec<Attachment>,
-    mentions: Vec<User>,
-    reactions: Vec<Reaction>,
+    pub id: Uuid,
+    pub content: String,
+    pub author_id: Uuid,
+    pub channel_id: Uuid,
+    pub is_pinned: bool,
+    pub reply_to_id: Option<Uuid>,
+    pub created_at: DateTime<Utc>,
+    pub edited_at: Option<DateTime<Utc>>,
+    pub attachments: Vec<Attachment>,
+    pub mentions: Vec<User>,
+    pub reactions: Vec<Reaction>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Attachment {
-    id: Uuid,
+    pub id: Uuid,
     #[serde(rename = "type")]
-    attachment_type: AttachmentType,
-    url: String,
-    filename: String,
-    size: i64,
-    mime_type: String,
-    width: Option<i32>,
-    height: Option<i32>,
-    duration: Option<i32>,
+    pub attachment_type: AttachmentType,
+    pub url: String,
+    pub filename: String,
+    pub size: i64,
+    pub mime_type: String,
+    pub width: Option<i32>,
+    pub height: Option<i32>,
+    pub duration: Option<i32>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -107,107 +109,154 @@ pub enum AttachmentType {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Reaction {
-    emoji: String,
-    count: i32,
-    has_reacted: bool,
+    pub emoji: String,
+    pub count: i32,
+    pub has_reacted: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Error {
-    code: String,
-    message: String,
-    details: Option<serde_json::Value>,
+    pub code: String,
+    pub message: String,
+    pub details: Option<serde_json::Value>,
 }
 
 // Request/Response structs
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LoginRequest {
-    username: Option<String>,
-    email: Option<String>,
-    password: String,
+    pub username: Option<String>,
+    pub email: Option<String>,
+    pub password: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LoginResponse {
-    token: String,
-    user: User,
+    pub token: String,
+    pub user: User,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct RegisterRequest {
-    username: String,
-    email: String,
-    password: String,
+    pub username: String,
+    pub email: String,
+    pub password: String,
 }
 
 #[derive(Debug, FromForm)]
 pub struct CreateServerForm<'r> {
-    name: String,
-    description: Option<String>,
-    icon: Option<TempFile<'r>>,
+    pub name: String,
+    pub description: Option<String>,
+    pub icon: Option<TempFile<'r>>,
 }
 
 #[derive(Debug, FromForm)]
 pub struct UpdateServerForm<'r> {
-    name: Option<String>,
-    description: Option<String>,
-    icon: Option<TempFile<'r>>,
+    pub name: Option<String>,
+    pub description: Option<String>,
+    pub icon: Option<TempFile<'r>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CreateChannelRequest {
-    name: String,
+    pub name: String,
     #[serde(rename = "type")]
-    channel_type: ChannelType,
-    topic: Option<String>,
-    is_private: Option<bool>,
+    pub channel_type: ChannelType,
+    pub topic: Option<String>,
+    pub is_private: Option<bool>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UpdateChannelRequest {
-    name: Option<String>,
-    topic: Option<String>,
-    slow_mode: Option<i32>,
+    pub name: Option<String>,
+    pub topic: Option<String>,
+    pub slow_mode: Option<i32>,
 }
 
 #[derive(Debug, FromForm)]
 pub struct CreateMessageForm<'r> {
-    content: String,
-    reply_to_id: Option<String>,
-    attachments: Vec<TempFile<'r>>,
+    pub content: String,
+    pub reply_to_id: Option<String>,
+    pub attachments: Vec<TempFile<'r>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UpdateMessageRequest {
-    content: String,
+    pub content: String,
 }
 
 #[derive(Debug, FromForm)]
 pub struct UpdateUserForm<'r> {
-    username: Option<String>,
-    avatar: Option<TempFile<'r>>,
-    status: Option<UserStatus>,
-    custom_status: Option<String>,
+    pub username: Option<String>,
+    pub avatar: Option<TempFile<'r>>,
+    pub status: Option<UserStatus>,
+    pub custom_status: Option<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct JoinServerRequest {
-    invite_code: String,
+    pub invite_code: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CreateInviteRequest {
-    max_uses: Option<i32>,
-    expires_in: Option<i32>,
+    pub max_uses: Option<i32>,
+    pub expires_in: Option<i32>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InviteResponse {
-    code: String,
-    expires_at: Option<DateTime<Utc>>,
-    max_uses: Option<i32>,
-    uses: i32,
+    pub code: String,
+    pub expires_at: Option<DateTime<Utc>>,
+    pub max_uses: Option<i32>,
+    pub uses: i32,
 }
+
+impl FromStr for UserStatus {
+    type Err = String;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s.to_lowercase().as_str() {
+            "online" => Ok(UserStatus::Online),
+            "idle" => Ok(UserStatus::Idle),
+            "dnd" => Ok(UserStatus::Dnd),
+            "offline" => Ok(UserStatus::Offline),
+            _ => Err(format!("Invalid user status: {}", s)),
+        }
+    }
+}
+
+impl std::fmt::Display for UserStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            UserStatus::Online => write!(f, "online"),
+            UserStatus::Idle => write!(f, "idle"),
+            UserStatus::Dnd => write!(f, "dnd"),
+            UserStatus::Offline => write!(f, "offline"),
+        }
+    }
+}
+
+impl std::fmt::Display for ChannelType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            ChannelType::Text => write!(f, "text"),
+            ChannelType::Voice => write!(f, "voice"),
+            ChannelType::Announcement => write!(f, "announcement"),
+        }
+    }
+}
+
+impl std::fmt::Display for AttachmentType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            AttachmentType::Image => write!(f, "image"),
+            AttachmentType::Video => write!(f, "video"),
+            AttachmentType::File => write!(f, "file"),
+        }
+    }
+}
+
+
 
 // Auth Routes
 #[post("/auth/login", format = "json", data = "<login>")]
@@ -296,6 +345,16 @@ async fn get_messages(
     Err(Status::NotImplemented)
 }
 
+#[post("/servers/<server_id>/channels/<channel_id>/messages", data = "<form>")]
+async fn create_message(user: AuthenticatedUser, channel_id: String, server_id: String, form: Form<CreateMessageForm<'_>>) -> Result<Status, String> {
+    info!("Creating message in channel: {}", channel_id);
+    info!("Message contents: {}", form.content);
+    user.user_id;
+
+
+
+
+    Err(format!("{}",form.content))
 #[post("/server/<server_id>/channels/<channel_id>/messages", data = "<form>")]
 async fn create_message(channel_id: String, form: Form<CreateMessageForm<'_>>) -> Result<Json<Message>, Status> {
     form.unwrap().reply_to_id;
@@ -405,7 +464,8 @@ pub async fn start_listener(config: &ServerConfig) -> Result<()> {
 
     let _server = rocket::build()
         .configure(rocket::Config {
-            port: config.port.get() as u16,
+            port: config.http_port.get() as u16,
+            address: IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)),
             ..Default::default()
         })
         .mount("/", routes![
@@ -453,28 +513,6 @@ pub async fn start_listener(config: &ServerConfig) -> Result<()> {
             error!("An error occurred. {e}");
             anyhow!(format!("Failed to start rocket server: {e:#}"))
         });
-
-    Ok(())
-}
-
-// Main function implementation
-#[rocket::main]
-async fn main() -> Result<()> {
-    // Initialize logger
-    env_logger::init();
-
-    // Create server configuration
-    let config = ServerConfig {
-        port: Port::new(5443).unwrap(),
-        log_level: log::LevelFilter::Info,
-        db_url: Url::parse("your_db_url").expect("Invalid URL"),
-        env_override: false,
-        log_path: Some(PathBuf::from("your_log_path")),
-        use_http: true,
-    };
-
-    // Start the server
-    start_listener(&config).await?;
 
     Ok(())
 }

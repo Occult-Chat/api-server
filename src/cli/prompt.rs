@@ -1,47 +1,38 @@
 use std::{path::PathBuf, str::FromStr};
 
 use crate::workspace::{self, get_server_dir, Port, ServerConfig};
-use anyhow::{anyhow, Context, Result};
-use inquire::{Confirm, Select, Text};
+use anyhow::{Context, Result};
+use inquire::{Confirm, Password, Select, Text};
 
-use log::{debug, error};
-use url::Url;
+use log::debug;
 
 pub fn create_config_interactive() -> Result<ServerConfig> {
-    // let port: u16 = loop {
-    //     match Text::new("Enter the port number you would like the server to run on:")
-    //     .with_default("8000")
-    //     .prompt()
-    //     .and_then(|input: String| input.parse::<u32>().map_err(|e|{e.into()}))
-    //     {
-    //         Ok(port) => todo!(),
-    //         Err(_) => todo!(),
-    //     }
-    // }
-    let port: Port = loop {
-        match Text::new("Enter the port number you would like your server to run on:")
-            .with_default("5443")
-            .prompt()
-            .and_then(|input| {
-                input
-                    .parse::<u16>()
-                    .map_err(|e| inquire::InquireError::Custom(format!("Invalud port number: {e}").into()))
-            }) {
-            Ok(port) => {
-                match Port::new(port.into()) {
-                    Ok(p) => break p,
-                    Err(e) => eprintln!("{e}"),
-                }
-            },
-            Err(e) => error!("{e}"),
-        }
-    };
+    let http_port: Port = Text::new("Enter the port number you would like the server to run on:")
+        .with_default("8000")
+        .prompt()?
+        .parse()?;
 
-    let input_url = Text::new("What will the  for your repository be?")
-        .with_initial_value("https://")
+    let db_url = Text::new("At what IP address is your database hosted?")
+        .with_initial_value("localhost")
         .prompt()
         .unwrap();
-    let db_url = Url::from_str(&input_url)?;
+
+    let db_port: Port = Text::new("Enter the port number you would like connect to for the DB:")
+        .with_default("3306")
+        .prompt()?
+        .parse()?;
+    let db_user = Text::new("What would you like the user credentials for DB to be?")
+        .with_default("root")
+        .prompt()?
+        .parse()?;
+    let db_pass = Password::new("What would you like the DB password to be?")
+        .with_display_toggle_enabled()
+        .prompt()?
+        .parse()?;
+    let db_name = Text::new("What would you like the db name to be?")
+    .with_default("occult_db")
+    .prompt()?
+    .parse()?;
     let use_http = Confirm::new("Would you like to enable HTTP?")
         .with_default(false)
         .prompt()?;
@@ -71,16 +62,23 @@ pub fn create_config_interactive() -> Result<ServerConfig> {
         "Would you like to allow enviornment variables to override configuration options?",
     )
     .with_default(true)
-    .with_help_message("WARNING: DISABLING THIS WILL BREAK AUTOMATION (such as a docker)")
+    .with_help_message("WARNING: DISABLING THIS CAN BREAK AUTOMATION (such as a docker compose)")
     .prompt()?;
-    let config = ServerConfig {
-        port,
 
+    
+    let config = ServerConfig {
+        http_port,
         use_http,
         log_level,
         log_path,
         db_url,
         env_override,
+        db_port,
+        db_user,
+        db_pass,
+        db_name,
+
+
     };
     let config_path = get_server_dir().context("Failed to obtain config path")?;
 
