@@ -296,9 +296,11 @@ async fn get_messages(
     Err(Status::NotImplemented)
 }
 
-#[post("/channels/<channel_id>/messages", data = "<form>")]
+#[post("/server/<server_id>/channels/<channel_id>/messages", data = "<form>")]
 async fn create_message(channel_id: String, form: Form<CreateMessageForm<'_>>) -> Result<Json<Message>, Status> {
+    form.unwrap().reply_to_id;
     info!("Creating message in channel: {}", channel_id);
+    
     Err(Status::NotImplemented)
 }
 
