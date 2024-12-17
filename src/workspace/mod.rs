@@ -71,9 +71,16 @@ impl From<Port> for u32 {
         value.0
     }
 }
+impl std::fmt::Display for Port {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f,"{}",self.0)
+    }
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ServerConfig {
+    // Base url the repository is hosted at
+    pub db_url: Url,
     // Define if the server has a cert
     pub http_port: Port,
     pub use_http: bool,

@@ -58,7 +58,9 @@ pub fn create_config_interactive() -> Result<ServerConfig> {
             }
         })?;
 
-    let env_override = Confirm::new("Would you like to allow enviornment variables to override configuration options?")
+    let env_override = Confirm::new(
+        "Would you like to allow enviornment variables to override configuration options?",
+    )
     .with_default(true)
     .with_help_message("WARNING: DISABLING THIS CAN BREAK AUTOMATION (such as a docker compose)")
     .prompt()?;
@@ -76,6 +78,7 @@ pub fn create_config_interactive() -> Result<ServerConfig> {
         db_pass,
         db_name,
 
+
     };
     let config_path = get_server_dir().context("Failed to obtain config path")?;
 
@@ -90,4 +93,3 @@ pub fn create_config_interactive() -> Result<ServerConfig> {
 pub fn create_config() -> ServerConfig {
     ServerConfig::default()
 }
-

@@ -355,6 +355,12 @@ async fn create_message(user: AuthenticatedUser, channel_id: String, server_id: 
 
 
     Err(format!("{}",form.content))
+#[post("/server/<server_id>/channels/<channel_id>/messages", data = "<form>")]
+async fn create_message(channel_id: String, form: Form<CreateMessageForm<'_>>) -> Result<Json<Message>, Status> {
+    form.unwrap().reply_to_id;
+    info!("Creating message in channel: {}", channel_id);
+    
+    Err(Status::NotImplemented)
 }
 
 #[patch("/channels/<channel_id>/messages/<message_id>", format = "json", data = "<message>")]
@@ -511,7 +517,6 @@ pub async fn start_listener(config: &ServerConfig) -> Result<()> {
     Ok(())
 }
 
-
 // Error handling implementation
 #[rocket::catch(404)]
 fn not_found() -> Json<Error> {
@@ -552,7 +557,7 @@ fn internal_error() -> Json<Error> {
 // JWT Authentication Guard implementation
 use rocket::request::{FromRequest, Outcome, Request};
 
-use crate::workspace::ServerConfig;
+use crate::workspace::{Port, ServerConfig};
 
 pub struct AuthenticatedUser {
     pub user_id: Uuid,
