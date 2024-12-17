@@ -23,7 +23,7 @@ pub enum ConfigError {
     FailedToParse { expected: String, received: String },
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Port(u32);
 
 impl Port {
@@ -64,10 +64,15 @@ impl From<Port> for u32 {
         value.0
     }
 }
+impl std::fmt::Display for Port {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f,"{}",self.0)
+    }
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ServerConfig {
-    pub port: u16,
+    pub port: Port,
     // Base url the repository is hosted at
     pub db_url: Url,
     // Define if the server has a cert
@@ -80,7 +85,7 @@ pub struct ServerConfig {
 impl Default for ServerConfig {
     fn default() -> Self {
         Self {
-            port: 8000,
+            port: Port(5443),
             db_url: Url::from_str("https://0.0.0.0:8000").unwrap(),
             use_http: true,
             log_level: log::LevelFilter::Info,
