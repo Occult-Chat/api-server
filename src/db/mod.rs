@@ -16,18 +16,34 @@ pub struct MySqlConnect {
 
 impl MySqlConnect {
     pub async fn connect(config: &ServerConfig) -> Result<Self, sqlx::Error> {
+        let connection_string = format!(
+            "mysql://{}:{}@{}:{}/{}",
+            config.db_user,
+            config.db_pass,
+            config.db_url,
+            config.db_port,
+            config.db_name
+        );
+
+        println!("Connection string: {:#?}", connection_string);
         
-        let pool =  MySqlPoolOptions::new()
-            .connect(config.db_url.as_str()).await?;
+        let pool = MySqlPoolOptions::new()
+            .connect(&connection_string).await?;
+            
         Ok(Self { pool })
     }
 }
 
 
 async fn db_setup(config: &ServerConfig) -> MySqlConnect {
-    MySqlConnect::connect(config)
+    println!("Connected to db!");
+    let db_connect = MySqlConnect::connect(config)
         .await
-        .expect("ERROR: MySql CONNECTION FAILURE")
+        .expect("ERROR: MySql CONNECTION FAILURE");
+
+        println!("Connected to db!");
+
+        
 //    dbConnect.
 }
 
@@ -37,6 +53,6 @@ async fn db_setup(config: &ServerConfig) -> MySqlConnect {
 
 
 pub async fn start_db(config: &ServerConfig) {
-    log::error!("Starting DB on port {}",config.port);
+    log::error!("Starting DB on port {:#?}",config.db_port);
     db_setup(&config).await;
 }

@@ -9,6 +9,7 @@ use serde::{Serialize, Deserialize};
 use url::Url;
 use uuid::Uuid;
 use chrono::{DateTime, Utc};
+use std::net::{IpAddr, Ipv4Addr};
 use std::path::PathBuf;
 
 // Models
@@ -296,10 +297,16 @@ async fn get_messages(
     Err(Status::NotImplemented)
 }
 
-#[post("/channels/<channel_id>/messages", data = "<form>")]
-async fn create_message(channel_id: String, form: Form<CreateMessageForm<'_>>) -> Result<Json<Message>, Status> {
+#[post("/servers/<server_id>/channels/<channel_id>/messages", data = "<form>")]
+async fn create_message(user: AuthenticatedUser, channel_id: String, server_id: String, form: Form<CreateMessageForm<'_>>) -> Result<Status, String> {
     info!("Creating message in channel: {}", channel_id);
-    Err(Status::NotImplemented)
+    info!("Message contents: {}", form.content);
+    user.user_id;
+
+
+
+
+    Err(format!("{}",form.content))
 }
 
 #[patch("/channels/<channel_id>/messages/<message_id>", format = "json", data = "<message>")]
@@ -403,7 +410,8 @@ pub async fn start_listener(config: &ServerConfig) -> Result<()> {
 
     let _server = rocket::build()
         .configure(rocket::Config {
-            port: config.port,
+            port: config.http_port.get() as u16,
+            address: IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)),
             ..Default::default()
         })
         .mount("/", routes![
@@ -455,27 +463,6 @@ pub async fn start_listener(config: &ServerConfig) -> Result<()> {
     Ok(())
 }
 
-// Main function implementation
-#[rocket::main]
-async fn main() -> Result<()> {
-    // Initialize logger
-    env_logger::init();
-
-    // Create server configuration
-    let config = ServerConfig {
-        port: 3000,
-        log_level: log::LevelFilter::Info,
-        db_url: Url::parse("your_db_url").expect("Invalid URL"),
-        env_override: false,
-        log_path: Some(PathBuf::from("your_log_path")),
-        use_http: true,
-    };
-
-    // Start the server
-    start_listener(&config).await?;
-
-    Ok(())
-}
 
 // Error handling implementation
 #[rocket::catch(404)]

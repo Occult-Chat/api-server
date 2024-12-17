@@ -678,3 +678,3212 @@
 [12:16:06:16:54 Thread#1/ERR] >> the occult config path did not yet exist, this is likely the first run
 [12:16:06:16:54 Thread#1/TRACE] >> registering event source with poller: token=Token(0), interests=READABLE
 [12:16:06:16:54 Thread#1/TRACE] >> registering event source with poller: token=Token(1), interests=READABLE
+[12:17:03:15:59 Thread#1/INFO] >> Running server
+[12:17:03:15:59 Thread#1/ERR] >> the server config did not exist: "/home/chance/.local/share/occult/server/config.server.yml"
+[12:17:03:15:59 Thread#1/TRACE] >> registering event source with poller: token=Token(0), interests=READABLE
+[12:17:03:15:59 Thread#1/TRACE] >> registering event source with poller: token=Token(1), interests=READABLE
+[12:17:03:16:14 Thread#1/DEBUG] >> config: port: 8000
+db_url: https://example.com/
+use_http: false
+log_level: TRACE
+log_path: './'
+env_override: true
+
+[12:17:03:16:14 Thread#1/DEBUG] >> Path did not yet exist: "/home/chance/.local/share/occult/server"
+[12:17:03:16:14 Thread#1/DEBUG] >> Full file path: "/home/chance/.local/share/occult/server/config.server.yml"
+[12:17:03:16:14 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:16:14 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:03:16:14 Thread#1/INFO] >> address: 127.0.0.1
+[12:17:03:16:14 Thread#1/INFO] >> port: 8000
+[12:17:03:16:14 Thread#1/INFO] >> workers: 16
+[12:17:03:16:14 Thread#1/INFO] >> max blocking threads: 512
+[12:17:03:16:14 Thread#1/INFO] >> ident: Rocket
+[12:17:03:16:14 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:03:16:14 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:03:16:14 Thread#1/INFO] >> temp dir: /tmp
+[12:17:03:16:14 Thread#1/INFO] >> http/2: true
+[12:17:03:16:14 Thread#1/INFO] >> keep-alive: 5s
+[12:17:03:16:14 Thread#1/INFO] >> tls: disabled
+[12:17:03:16:14 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:03:16:14 Thread#1/INFO] >> log level: normal
+[12:17:03:16:14 Thread#1/INFO] >> cli colors: true
+[12:17:03:16:14 Thread#1/INFO] >> 📬 Routes:
+[12:17:03:16:14 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:03:16:14 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:03:16:14 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:03:16:14 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:03:16:14 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:03:16:14 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:03:16:14 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:03:16:14 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:03:16:14 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:03:16:14 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:03:16:14 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:03:16:14 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:03:16:14 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:03:16:14 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:03:16:14 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:03:16:14 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:03:16:14 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:03:16:14 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:03:16:14 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:03:16:14 Thread#1/INFO] >> (create_message) POST /channels/<channel_id>/messages
+[12:17:03:16:14 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:03:16:14 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:03:16:14 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:03:16:14 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:03:16:14 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:03:16:14 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:16:14 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:16:14 Thread#1/INFO] >> 📡 Fairings:
+[12:17:03:16:14 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:03:16:14 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:03:16:14 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:03:16:14 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:03:16:14 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:03:16:14 Thread#1/WARN] >> 🚀 Rocket has launched from http://127.0.0.1:8000
+[12:17:03:16:14 Thread#1/ERR] >> Starting DB on port 8000
+[12:17:03:16:15 Thread#16/TRACE] >> Conn::read_head
+[12:17:03:16:15 Thread#16/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:16:21 Thread#16/TRACE] >> Conn::read_head
+[12:17:03:16:21 Thread#16/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:16:21 Thread#2/TRACE] >> Conn::read_head
+[12:17:03:16:21 Thread#2/TRACE] >> received 90 bytes
+[12:17:03:16:21 Thread#2/TRACE] >> parse_headers;
+[12:17:03:16:21 Thread#2/TRACE] >> -> parse_headers;
+[12:17:03:16:21 Thread#2/TRACE] >> Request.parse bytes=90
+[12:17:03:16:21 Thread#2/TRACE] >> Request.parse Complete(90)
+[12:17:03:16:21 Thread#2/TRACE] >> <- parse_headers;
+[12:17:03:16:21 Thread#2/TRACE] >> -- parse_headers;
+[12:17:03:16:21 Thread#2/DEBUG] >> parsed 3 headers
+[12:17:03:16:21 Thread#2/DEBUG] >> incoming body is empty
+[12:17:03:16:21 Thread#2/TRACE] >> remote disabling keep-alive
+[12:17:03:16:21 Thread#2/DEBUG] >> received request: Request {
+    method: GET,
+    uri: /user/chance,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "connection": "close",
+    },
+    body: Body(
+        Empty,
+    ),
+}
+[12:17:03:16:21 Thread#2/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:16:21 Thread#2/INFO] >> GET /user/chance:
+[12:17:03:16:21 Thread#2/ERR] >> No matching routes for GET /user/chance.
+[12:17:03:16:21 Thread#2/WARN] >> No 404 catcher registered. Using Rocket default.
+[12:17:03:16:21 Thread#2/DEBUG] >> sending response: Response {
+    status: 404,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "435",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:16:21 Thread#2/INFO] >> Response succeeded.
+[12:17:03:16:21 Thread#2/TRACE] >> encode_headers;
+[12:17:03:16:21 Thread#2/TRACE] >> -> encode_headers;
+[12:17:03:16:21 Thread#2/TRACE] >> Server::encode status=404, body=Some(Unknown), req_method=Some(GET)
+[12:17:03:16:21 Thread#2/TRACE] >> <- encode_headers;
+[12:17:03:16:21 Thread#2/TRACE] >> -- encode_headers;
+[12:17:03:16:21 Thread#2/TRACE] >> sized write, len = 435
+[12:17:03:16:21 Thread#2/TRACE] >> buffer.queue self.len=242 buf.len=435
+[12:17:03:16:21 Thread#2/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:16:21 Thread#2/DEBUG] >> flushed 677 bytes
+[12:17:03:16:21 Thread#2/TRACE] >> State::close()
+[12:17:03:16:21 Thread#2/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:16:21 Thread#2/TRACE] >> shut down IO complete
+[12:17:03:18:59 Thread#1/INFO] >> Running server
+[12:17:03:18:59 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:18:59 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:18:59 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:03:18:59 Thread#1/INFO] >> address: 127.0.0.1
+[12:17:03:18:59 Thread#1/INFO] >> port: 8000
+[12:17:03:18:59 Thread#1/INFO] >> workers: 16
+[12:17:03:18:59 Thread#1/INFO] >> max blocking threads: 512
+[12:17:03:18:59 Thread#1/INFO] >> ident: Rocket
+[12:17:03:18:59 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:03:18:59 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:03:18:59 Thread#1/INFO] >> temp dir: /tmp
+[12:17:03:18:59 Thread#1/INFO] >> http/2: true
+[12:17:03:18:59 Thread#1/INFO] >> keep-alive: 5s
+[12:17:03:18:59 Thread#1/INFO] >> tls: disabled
+[12:17:03:18:59 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:03:18:59 Thread#1/INFO] >> log level: normal
+[12:17:03:18:59 Thread#1/INFO] >> cli colors: true
+[12:17:03:18:59 Thread#1/INFO] >> 📬 Routes:
+[12:17:03:18:59 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:03:18:59 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:03:18:59 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:03:18:59 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:03:18:59 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:03:18:59 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:03:18:59 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:03:18:59 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:03:18:59 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:03:18:59 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:03:18:59 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:03:18:59 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:03:18:59 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:03:18:59 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:03:18:59 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:03:18:59 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:03:18:59 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:03:18:59 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:03:18:59 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:03:18:59 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:03:18:59 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:03:18:59 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:03:18:59 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:03:18:59 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:03:18:59 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:18:59 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:18:59 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:18:59 Thread#1/INFO] >> 📡 Fairings:
+[12:17:03:18:59 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:03:18:59 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:03:18:59 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:03:18:59 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:03:18:59 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:03:18:59 Thread#1/WARN] >> 🚀 Rocket has launched from http://127.0.0.1:8000
+[12:17:03:18:59 Thread#1/ERR] >> Starting DB on port 8000
+[12:17:03:20:03 Thread#1/INFO] >> Running server
+[12:17:03:20:03 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:20:03 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:20:03 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:03:20:03 Thread#1/INFO] >> address: 127.0.0.1
+[12:17:03:20:03 Thread#1/INFO] >> port: 8000
+[12:17:03:20:03 Thread#1/INFO] >> workers: 16
+[12:17:03:20:03 Thread#1/INFO] >> max blocking threads: 512
+[12:17:03:20:03 Thread#1/INFO] >> ident: Rocket
+[12:17:03:20:03 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:03:20:03 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:03:20:03 Thread#1/INFO] >> temp dir: /tmp
+[12:17:03:20:03 Thread#1/INFO] >> http/2: true
+[12:17:03:20:03 Thread#1/INFO] >> keep-alive: 5s
+[12:17:03:20:03 Thread#1/INFO] >> tls: disabled
+[12:17:03:20:03 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:03:20:03 Thread#1/INFO] >> log level: normal
+[12:17:03:20:03 Thread#1/INFO] >> cli colors: true
+[12:17:03:20:03 Thread#1/INFO] >> 📬 Routes:
+[12:17:03:20:03 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:03:20:03 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:03:20:03 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:03:20:03 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:03:20:03 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:03:20:03 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:03:20:03 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:03:20:03 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:03:20:03 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:03:20:03 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:03:20:03 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:03:20:03 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:03:20:03 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:03:20:03 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:03:20:03 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:03:20:03 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:03:20:03 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:03:20:03 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:03:20:03 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:03:20:03 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:03:20:03 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:03:20:03 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:03:20:03 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:03:20:03 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:03:20:03 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:20:03 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:20:03 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:20:03 Thread#1/INFO] >> 📡 Fairings:
+[12:17:03:20:03 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:03:20:03 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:03:20:03 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:03:20:03 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:03:20:03 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:03:20:03 Thread#1/WARN] >> 🚀 Rocket has launched from http://127.0.0.1:8000
+[12:17:03:20:03 Thread#1/ERR] >> Starting DB on port 8000
+[12:17:03:22:40 Thread#1/INFO] >> Running server
+[12:17:03:22:40 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:22:40 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:22:40 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:03:22:40 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:03:22:40 Thread#1/INFO] >> port: 8000
+[12:17:03:22:40 Thread#1/INFO] >> workers: 16
+[12:17:03:22:40 Thread#1/INFO] >> max blocking threads: 512
+[12:17:03:22:40 Thread#1/INFO] >> ident: Rocket
+[12:17:03:22:40 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:03:22:40 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:03:22:40 Thread#1/INFO] >> temp dir: /tmp
+[12:17:03:22:40 Thread#1/INFO] >> http/2: true
+[12:17:03:22:40 Thread#1/INFO] >> keep-alive: 5s
+[12:17:03:22:40 Thread#1/INFO] >> tls: disabled
+[12:17:03:22:40 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:03:22:40 Thread#1/INFO] >> log level: normal
+[12:17:03:22:40 Thread#1/INFO] >> cli colors: true
+[12:17:03:22:40 Thread#1/INFO] >> 📬 Routes:
+[12:17:03:22:40 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:03:22:40 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:03:22:40 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:03:22:40 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:03:22:40 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:03:22:40 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:03:22:40 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:03:22:40 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:03:22:40 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:03:22:40 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:03:22:40 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:03:22:40 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:03:22:40 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:03:22:40 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:03:22:40 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:03:22:40 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:03:22:40 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:03:22:40 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:03:22:40 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:03:22:40 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:03:22:40 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:03:22:40 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:03:22:40 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:03:22:40 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:03:22:40 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:22:40 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:22:40 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:22:40 Thread#1/INFO] >> 📡 Fairings:
+[12:17:03:22:40 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:03:22:40 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:03:22:40 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:03:22:40 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:03:22:40 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:03:22:40 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:03:22:40 Thread#1/ERR] >> Starting DB on port 8000
+[12:17:03:22:40 Thread#17/TRACE] >> Conn::read_head
+[12:17:03:22:40 Thread#17/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:22:40 Thread#3/TRACE] >> Conn::read_head
+[12:17:03:22:40 Thread#3/TRACE] >> received 259 bytes
+[12:17:03:22:40 Thread#3/TRACE] >> parse_headers;
+[12:17:03:22:40 Thread#3/TRACE] >> -> parse_headers;
+[12:17:03:22:40 Thread#3/TRACE] >> Request.parse bytes=259
+[12:17:03:22:40 Thread#3/TRACE] >> Request.parse Complete(153)
+[12:17:03:22:40 Thread#3/TRACE] >> <- parse_headers;
+[12:17:03:22:40 Thread#3/TRACE] >> -- parse_headers;
+[12:17:03:22:40 Thread#3/DEBUG] >> parsed 5 headers
+[12:17:03:22:40 Thread#3/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:22:40 Thread#3/TRACE] >> remote disabling keep-alive
+[12:17:03:22:40 Thread#3/TRACE] >> decode; state=Length(106)
+[12:17:03:22:40 Thread#3/DEBUG] >> incoming body completed
+[12:17:03:22:40 Thread#3/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:40 Thread#3/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:22:40 Thread#3/INFO] >> POST /channels/hi/messages application/json:
+[12:17:03:22:40 Thread#3/ERR] >> No matching routes for POST /channels/hi/messages application/json.
+[12:17:03:22:40 Thread#3/WARN] >> No 404 catcher registered. Using Rocket default.
+[12:17:03:22:40 Thread#3/DEBUG] >> sending response: Response {
+    status: 404,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "435",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:40 Thread#3/INFO] >> Response succeeded.
+[12:17:03:22:40 Thread#3/TRACE] >> encode_headers;
+[12:17:03:22:40 Thread#3/TRACE] >> -> encode_headers;
+[12:17:03:22:40 Thread#3/TRACE] >> Server::encode status=404, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:22:40 Thread#3/TRACE] >> <- encode_headers;
+[12:17:03:22:40 Thread#3/TRACE] >> -- encode_headers;
+[12:17:03:22:40 Thread#3/TRACE] >> sized write, len = 435
+[12:17:03:22:40 Thread#3/TRACE] >> buffer.queue self.len=242 buf.len=435
+[12:17:03:22:40 Thread#3/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:22:40 Thread#3/DEBUG] >> flushed 677 bytes
+[12:17:03:22:40 Thread#3/TRACE] >> State::close()
+[12:17:03:22:40 Thread#3/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:22:40 Thread#3/TRACE] >> shut down IO complete
+[12:17:03:22:43 Thread#3/TRACE] >> Conn::read_head
+[12:17:03:22:43 Thread#3/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:22:43 Thread#15/TRACE] >> Conn::read_head
+[12:17:03:22:43 Thread#15/TRACE] >> received 259 bytes
+[12:17:03:22:43 Thread#15/TRACE] >> parse_headers;
+[12:17:03:22:43 Thread#15/TRACE] >> -> parse_headers;
+[12:17:03:22:43 Thread#15/TRACE] >> Request.parse bytes=259
+[12:17:03:22:43 Thread#15/TRACE] >> Request.parse Complete(153)
+[12:17:03:22:43 Thread#15/TRACE] >> <- parse_headers;
+[12:17:03:22:43 Thread#15/TRACE] >> -- parse_headers;
+[12:17:03:22:43 Thread#15/DEBUG] >> parsed 5 headers
+[12:17:03:22:43 Thread#15/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:22:43 Thread#15/TRACE] >> remote disabling keep-alive
+[12:17:03:22:43 Thread#15/TRACE] >> decode; state=Length(106)
+[12:17:03:22:43 Thread#15/DEBUG] >> incoming body completed
+[12:17:03:22:43 Thread#15/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:43 Thread#15/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:22:43 Thread#15/INFO] >> POST /channels/hi/messages application/json:
+[12:17:03:22:43 Thread#15/ERR] >> No matching routes for POST /channels/hi/messages application/json.
+[12:17:03:22:43 Thread#15/WARN] >> No 404 catcher registered. Using Rocket default.
+[12:17:03:22:43 Thread#15/DEBUG] >> sending response: Response {
+    status: 404,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "435",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:43 Thread#15/INFO] >> Response succeeded.
+[12:17:03:22:43 Thread#15/TRACE] >> encode_headers;
+[12:17:03:22:43 Thread#15/TRACE] >> -> encode_headers;
+[12:17:03:22:43 Thread#15/TRACE] >> Server::encode status=404, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:22:43 Thread#15/TRACE] >> <- encode_headers;
+[12:17:03:22:43 Thread#15/TRACE] >> -- encode_headers;
+[12:17:03:22:43 Thread#15/TRACE] >> sized write, len = 435
+[12:17:03:22:43 Thread#15/TRACE] >> buffer.queue self.len=242 buf.len=435
+[12:17:03:22:43 Thread#15/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:22:43 Thread#15/DEBUG] >> flushed 677 bytes
+[12:17:03:22:43 Thread#15/TRACE] >> State::close()
+[12:17:03:22:43 Thread#15/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:22:43 Thread#15/TRACE] >> shut down IO complete
+[12:17:03:22:44 Thread#15/TRACE] >> Conn::read_head
+[12:17:03:22:44 Thread#15/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:22:44 Thread#3/TRACE] >> Conn::read_head
+[12:17:03:22:44 Thread#3/TRACE] >> received 259 bytes
+[12:17:03:22:44 Thread#3/TRACE] >> parse_headers;
+[12:17:03:22:44 Thread#3/TRACE] >> -> parse_headers;
+[12:17:03:22:44 Thread#3/TRACE] >> Request.parse bytes=259
+[12:17:03:22:44 Thread#3/TRACE] >> Request.parse Complete(153)
+[12:17:03:22:44 Thread#3/TRACE] >> <- parse_headers;
+[12:17:03:22:44 Thread#3/TRACE] >> -- parse_headers;
+[12:17:03:22:44 Thread#3/DEBUG] >> parsed 5 headers
+[12:17:03:22:44 Thread#3/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:22:44 Thread#3/TRACE] >> remote disabling keep-alive
+[12:17:03:22:44 Thread#3/TRACE] >> decode; state=Length(106)
+[12:17:03:22:44 Thread#3/DEBUG] >> incoming body completed
+[12:17:03:22:44 Thread#3/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:44 Thread#3/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:22:44 Thread#3/INFO] >> POST /channels/hi/messages application/json:
+[12:17:03:22:44 Thread#3/ERR] >> No matching routes for POST /channels/hi/messages application/json.
+[12:17:03:22:44 Thread#3/WARN] >> No 404 catcher registered. Using Rocket default.
+[12:17:03:22:44 Thread#3/DEBUG] >> sending response: Response {
+    status: 404,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "435",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:44 Thread#3/INFO] >> Response succeeded.
+[12:17:03:22:44 Thread#3/TRACE] >> encode_headers;
+[12:17:03:22:44 Thread#3/TRACE] >> -> encode_headers;
+[12:17:03:22:44 Thread#3/TRACE] >> Server::encode status=404, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:22:44 Thread#3/TRACE] >> <- encode_headers;
+[12:17:03:22:44 Thread#3/TRACE] >> -- encode_headers;
+[12:17:03:22:44 Thread#3/TRACE] >> sized write, len = 435
+[12:17:03:22:44 Thread#3/TRACE] >> buffer.queue self.len=242 buf.len=435
+[12:17:03:22:44 Thread#3/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:22:44 Thread#3/DEBUG] >> flushed 677 bytes
+[12:17:03:22:44 Thread#3/TRACE] >> State::close()
+[12:17:03:22:44 Thread#3/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:22:44 Thread#3/TRACE] >> shut down IO complete
+[12:17:03:22:54 Thread#3/TRACE] >> Conn::read_head
+[12:17:03:22:54 Thread#3/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:22:55 Thread#15/TRACE] >> Conn::read_head
+[12:17:03:22:55 Thread#15/TRACE] >> received 271 bytes
+[12:17:03:22:55 Thread#15/TRACE] >> parse_headers;
+[12:17:03:22:55 Thread#15/TRACE] >> -> parse_headers;
+[12:17:03:22:55 Thread#15/TRACE] >> Request.parse bytes=271
+[12:17:03:22:55 Thread#15/TRACE] >> Request.parse Complete(165)
+[12:17:03:22:55 Thread#15/TRACE] >> <- parse_headers;
+[12:17:03:22:55 Thread#15/TRACE] >> -- parse_headers;
+[12:17:03:22:55 Thread#15/DEBUG] >> parsed 5 headers
+[12:17:03:22:55 Thread#15/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:22:55 Thread#15/TRACE] >> remote disabling keep-alive
+[12:17:03:22:55 Thread#15/TRACE] >> decode; state=Length(106)
+[12:17:03:22:55 Thread#15/DEBUG] >> incoming body completed
+[12:17:03:22:55 Thread#15/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /server/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:55 Thread#15/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:22:55 Thread#15/INFO] >> POST /server/test/channels/hi/messages application/json:
+[12:17:03:22:55 Thread#15/ERR] >> No matching routes for POST /server/test/channels/hi/messages application/json.
+[12:17:03:22:55 Thread#15/WARN] >> No 404 catcher registered. Using Rocket default.
+[12:17:03:22:55 Thread#15/DEBUG] >> sending response: Response {
+    status: 404,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "435",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:55 Thread#15/INFO] >> Response succeeded.
+[12:17:03:22:55 Thread#15/TRACE] >> encode_headers;
+[12:17:03:22:55 Thread#15/TRACE] >> -> encode_headers;
+[12:17:03:22:55 Thread#15/TRACE] >> Server::encode status=404, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:22:55 Thread#15/TRACE] >> <- encode_headers;
+[12:17:03:22:55 Thread#15/TRACE] >> -- encode_headers;
+[12:17:03:22:55 Thread#15/TRACE] >> sized write, len = 435
+[12:17:03:22:55 Thread#15/TRACE] >> buffer.queue self.len=242 buf.len=435
+[12:17:03:22:55 Thread#15/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:22:55 Thread#15/DEBUG] >> flushed 677 bytes
+[12:17:03:22:55 Thread#15/TRACE] >> State::close()
+[12:17:03:22:55 Thread#15/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:22:55 Thread#15/TRACE] >> shut down IO complete
+[12:17:03:22:58 Thread#15/TRACE] >> Conn::read_head
+[12:17:03:22:58 Thread#15/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:22:59 Thread#3/TRACE] >> Conn::read_head
+[12:17:03:22:59 Thread#3/TRACE] >> received 271 bytes
+[12:17:03:22:59 Thread#3/TRACE] >> parse_headers;
+[12:17:03:22:59 Thread#3/TRACE] >> -> parse_headers;
+[12:17:03:22:59 Thread#3/TRACE] >> Request.parse bytes=271
+[12:17:03:22:59 Thread#3/TRACE] >> Request.parse Complete(165)
+[12:17:03:22:59 Thread#3/TRACE] >> <- parse_headers;
+[12:17:03:22:59 Thread#3/TRACE] >> -- parse_headers;
+[12:17:03:22:59 Thread#3/DEBUG] >> parsed 5 headers
+[12:17:03:22:59 Thread#3/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:22:59 Thread#3/TRACE] >> remote disabling keep-alive
+[12:17:03:22:59 Thread#3/TRACE] >> decode; state=Length(106)
+[12:17:03:22:59 Thread#3/DEBUG] >> incoming body completed
+[12:17:03:22:59 Thread#3/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /server/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:59 Thread#3/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:22:59 Thread#3/INFO] >> POST /server/test/channels/hi/messages application/json:
+[12:17:03:22:59 Thread#3/ERR] >> No matching routes for POST /server/test/channels/hi/messages application/json.
+[12:17:03:22:59 Thread#3/WARN] >> No 404 catcher registered. Using Rocket default.
+[12:17:03:22:59 Thread#3/DEBUG] >> sending response: Response {
+    status: 404,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "435",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:22:59 Thread#3/INFO] >> Response succeeded.
+[12:17:03:22:59 Thread#3/TRACE] >> encode_headers;
+[12:17:03:22:59 Thread#3/TRACE] >> -> encode_headers;
+[12:17:03:22:59 Thread#3/TRACE] >> Server::encode status=404, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:22:59 Thread#3/TRACE] >> <- encode_headers;
+[12:17:03:22:59 Thread#3/TRACE] >> -- encode_headers;
+[12:17:03:22:59 Thread#3/TRACE] >> sized write, len = 435
+[12:17:03:22:59 Thread#3/TRACE] >> buffer.queue self.len=242 buf.len=435
+[12:17:03:22:59 Thread#3/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:22:59 Thread#3/DEBUG] >> flushed 677 bytes
+[12:17:03:22:59 Thread#3/TRACE] >> State::close()
+[12:17:03:22:59 Thread#3/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:22:59 Thread#3/TRACE] >> shut down IO complete
+[12:17:03:23:28 Thread#1/INFO] >> Running server
+[12:17:03:23:28 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:23:28 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:23:28 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:03:23:28 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:03:23:28 Thread#1/INFO] >> port: 8000
+[12:17:03:23:28 Thread#1/INFO] >> workers: 16
+[12:17:03:23:28 Thread#1/INFO] >> max blocking threads: 512
+[12:17:03:23:28 Thread#1/INFO] >> ident: Rocket
+[12:17:03:23:28 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:03:23:28 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:03:23:28 Thread#1/INFO] >> temp dir: /tmp
+[12:17:03:23:28 Thread#1/INFO] >> http/2: true
+[12:17:03:23:28 Thread#1/INFO] >> keep-alive: 5s
+[12:17:03:23:28 Thread#1/INFO] >> tls: disabled
+[12:17:03:23:28 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:03:23:28 Thread#1/INFO] >> log level: normal
+[12:17:03:23:28 Thread#1/INFO] >> cli colors: true
+[12:17:03:23:28 Thread#1/INFO] >> 📬 Routes:
+[12:17:03:23:28 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:03:23:28 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:03:23:28 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:03:23:28 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:03:23:28 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:03:23:28 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:03:23:28 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:03:23:28 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:03:23:28 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:03:23:28 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:03:23:28 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:03:23:28 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:03:23:28 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:03:23:28 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:03:23:28 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:03:23:28 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:03:23:28 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:03:23:28 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:03:23:28 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:03:23:28 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:03:23:28 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:03:23:28 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:03:23:28 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:03:23:28 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:03:23:28 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:23:28 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:23:28 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:23:28 Thread#1/INFO] >> 📡 Fairings:
+[12:17:03:23:28 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:03:23:28 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:03:23:28 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:03:23:28 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:03:23:28 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:03:23:28 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:03:23:28 Thread#1/ERR] >> Starting DB on port 8000
+[12:17:03:23:28 Thread#5/TRACE] >> Conn::read_head
+[12:17:03:23:28 Thread#5/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:23:28 Thread#2/TRACE] >> Conn::read_head
+[12:17:03:23:28 Thread#2/TRACE] >> received 272 bytes
+[12:17:03:23:28 Thread#2/TRACE] >> parse_headers;
+[12:17:03:23:28 Thread#2/TRACE] >> -> parse_headers;
+[12:17:03:23:28 Thread#2/TRACE] >> Request.parse bytes=272
+[12:17:03:23:28 Thread#2/TRACE] >> Request.parse Complete(166)
+[12:17:03:23:28 Thread#2/TRACE] >> <- parse_headers;
+[12:17:03:23:28 Thread#2/TRACE] >> -- parse_headers;
+[12:17:03:23:28 Thread#2/DEBUG] >> parsed 5 headers
+[12:17:03:23:28 Thread#2/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:23:28 Thread#2/TRACE] >> remote disabling keep-alive
+[12:17:03:23:28 Thread#2/TRACE] >> decode; state=Length(106)
+[12:17:03:23:28 Thread#2/DEBUG] >> incoming body completed
+[12:17:03:23:28 Thread#2/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:23:28 Thread#2/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:23:28 Thread#2/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:23:28 Thread#2/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:23:28 Thread#2/WARN] >> Request guard `AuthenticatedUser` failed: Error { code: "MISSING_TOKEN", message: "Authentication token is required", details: None }.
+[12:17:03:23:28 Thread#2/INFO] >> Outcome: Error(401 Unauthorized)
+[12:17:03:23:28 Thread#2/WARN] >> No 401 catcher registered. Using Rocket default.
+[12:17:03:23:28 Thread#2/DEBUG] >> sending response: Response {
+    status: 401,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "440",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:23:28 Thread#2/INFO] >> Response succeeded.
+[12:17:03:23:28 Thread#2/TRACE] >> encode_headers;
+[12:17:03:23:28 Thread#2/TRACE] >> -> encode_headers;
+[12:17:03:23:28 Thread#2/TRACE] >> Server::encode status=401, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:23:28 Thread#2/TRACE] >> <- encode_headers;
+[12:17:03:23:28 Thread#2/TRACE] >> -- encode_headers;
+[12:17:03:23:28 Thread#2/TRACE] >> sized write, len = 440
+[12:17:03:23:28 Thread#2/TRACE] >> buffer.queue self.len=245 buf.len=440
+[12:17:03:23:28 Thread#2/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:23:28 Thread#2/DEBUG] >> flushed 685 bytes
+[12:17:03:23:28 Thread#2/TRACE] >> State::close()
+[12:17:03:23:28 Thread#2/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:23:28 Thread#2/TRACE] >> shut down IO complete
+[12:17:03:23:30 Thread#2/TRACE] >> Conn::read_head
+[12:17:03:23:30 Thread#2/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:23:30 Thread#16/TRACE] >> Conn::read_head
+[12:17:03:23:30 Thread#16/TRACE] >> received 272 bytes
+[12:17:03:23:30 Thread#16/TRACE] >> parse_headers;
+[12:17:03:23:30 Thread#16/TRACE] >> -> parse_headers;
+[12:17:03:23:30 Thread#16/TRACE] >> Request.parse bytes=272
+[12:17:03:23:30 Thread#16/TRACE] >> Request.parse Complete(166)
+[12:17:03:23:30 Thread#16/TRACE] >> <- parse_headers;
+[12:17:03:23:30 Thread#16/TRACE] >> -- parse_headers;
+[12:17:03:23:30 Thread#16/DEBUG] >> parsed 5 headers
+[12:17:03:23:30 Thread#16/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:23:30 Thread#16/TRACE] >> remote disabling keep-alive
+[12:17:03:23:30 Thread#16/TRACE] >> decode; state=Length(106)
+[12:17:03:23:30 Thread#16/DEBUG] >> incoming body completed
+[12:17:03:23:30 Thread#16/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:23:30 Thread#16/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:23:30 Thread#16/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:23:30 Thread#16/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:23:30 Thread#16/WARN] >> Request guard `AuthenticatedUser` failed: Error { code: "MISSING_TOKEN", message: "Authentication token is required", details: None }.
+[12:17:03:23:30 Thread#16/INFO] >> Outcome: Error(401 Unauthorized)
+[12:17:03:23:30 Thread#16/WARN] >> No 401 catcher registered. Using Rocket default.
+[12:17:03:23:30 Thread#16/DEBUG] >> sending response: Response {
+    status: 401,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "440",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:23:30 Thread#16/INFO] >> Response succeeded.
+[12:17:03:23:30 Thread#16/TRACE] >> encode_headers;
+[12:17:03:23:30 Thread#16/TRACE] >> -> encode_headers;
+[12:17:03:23:30 Thread#16/TRACE] >> Server::encode status=401, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:23:30 Thread#16/TRACE] >> <- encode_headers;
+[12:17:03:23:30 Thread#16/TRACE] >> -- encode_headers;
+[12:17:03:23:30 Thread#16/TRACE] >> sized write, len = 440
+[12:17:03:23:30 Thread#16/TRACE] >> buffer.queue self.len=245 buf.len=440
+[12:17:03:23:30 Thread#16/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:23:30 Thread#16/DEBUG] >> flushed 685 bytes
+[12:17:03:23:30 Thread#16/TRACE] >> State::close()
+[12:17:03:23:30 Thread#16/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:23:30 Thread#16/TRACE] >> shut down IO complete
+[12:17:03:24:06 Thread#16/WARN] >> Received SIGINT. Requesting shutdown.
+[12:17:03:24:06 Thread#1/INFO] >> Shutdown requested. Waiting for pending I/O...
+[12:17:03:24:06 Thread#1/DEBUG] >> signal received, starting graceful shutdown
+[12:17:03:24:06 Thread#1/INFO] >> Graceful shutdown completed successfully.
+[12:17:03:24:09 Thread#1/INFO] >> Running server
+[12:17:03:24:09 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:24:09 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:24:09 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:03:24:09 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:03:24:09 Thread#1/INFO] >> port: 8000
+[12:17:03:24:09 Thread#1/INFO] >> workers: 16
+[12:17:03:24:09 Thread#1/INFO] >> max blocking threads: 512
+[12:17:03:24:09 Thread#1/INFO] >> ident: Rocket
+[12:17:03:24:09 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:03:24:09 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:03:24:09 Thread#1/INFO] >> temp dir: /tmp
+[12:17:03:24:09 Thread#1/INFO] >> http/2: true
+[12:17:03:24:09 Thread#1/INFO] >> keep-alive: 5s
+[12:17:03:24:09 Thread#1/INFO] >> tls: disabled
+[12:17:03:24:09 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:03:24:09 Thread#1/INFO] >> log level: normal
+[12:17:03:24:09 Thread#1/INFO] >> cli colors: true
+[12:17:03:24:09 Thread#1/INFO] >> 📬 Routes:
+[12:17:03:24:09 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:03:24:09 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:03:24:09 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:03:24:09 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:03:24:09 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:03:24:09 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:03:24:09 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:03:24:09 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:03:24:09 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:03:24:09 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:03:24:09 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:03:24:09 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:03:24:09 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:03:24:09 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:03:24:09 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:03:24:09 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:03:24:09 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:03:24:09 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:03:24:09 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:03:24:09 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:03:24:09 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:03:24:09 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:03:24:09 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:03:24:09 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:03:24:09 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:24:09 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:24:09 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:24:09 Thread#1/INFO] >> 📡 Fairings:
+[12:17:03:24:09 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:03:24:09 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:03:24:09 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:03:24:09 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:03:24:09 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:03:24:09 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:03:24:09 Thread#1/ERR] >> Starting DB on port 8000
+[12:17:03:24:21 Thread#17/TRACE] >> Conn::read_head
+[12:17:03:24:21 Thread#17/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:24:22 Thread#3/TRACE] >> Conn::read_head
+[12:17:03:24:22 Thread#3/TRACE] >> received 309 bytes
+[12:17:03:24:22 Thread#3/TRACE] >> parse_headers;
+[12:17:03:24:22 Thread#3/TRACE] >> -> parse_headers;
+[12:17:03:24:22 Thread#3/TRACE] >> Request.parse bytes=309
+[12:17:03:24:22 Thread#3/TRACE] >> Request.parse Complete(203)
+[12:17:03:24:22 Thread#3/TRACE] >> <- parse_headers;
+[12:17:03:24:22 Thread#3/TRACE] >> -- parse_headers;
+[12:17:03:24:22 Thread#3/DEBUG] >> parsed 6 headers
+[12:17:03:24:22 Thread#3/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:24:22 Thread#3/TRACE] >> remote disabling keep-alive
+[12:17:03:24:22 Thread#3/TRACE] >> decode; state=Length(106)
+[12:17:03:24:22 Thread#3/DEBUG] >> incoming body completed
+[12:17:03:24:22 Thread#3/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "authorization": "Bearer wretewrtewrtw",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:24:22 Thread#3/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:24:22 Thread#3/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:24:22 Thread#3/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:24:22 Thread#3/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:24:22 Thread#3/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:24:22 Thread#3/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:24:22 Thread#3/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:24:22 Thread#3/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:24:22 Thread#3/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:24:22 Thread#3/ERR] >> No matching routes for POST /servers/test/channels/hi/messages application/json.
+[12:17:03:24:22 Thread#3/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:24:22 Thread#3/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "x-frame-options": "SAMEORIGIN",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:24:22 Thread#3/INFO] >> Response succeeded.
+[12:17:03:24:22 Thread#3/TRACE] >> encode_headers;
+[12:17:03:24:22 Thread#3/TRACE] >> -> encode_headers;
+[12:17:03:24:22 Thread#3/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:24:22 Thread#3/TRACE] >> <- encode_headers;
+[12:17:03:24:22 Thread#3/TRACE] >> -- encode_headers;
+[12:17:03:24:22 Thread#3/TRACE] >> sized write, len = 501
+[12:17:03:24:22 Thread#3/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:24:22 Thread#3/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:24:22 Thread#3/DEBUG] >> flushed 756 bytes
+[12:17:03:24:22 Thread#3/TRACE] >> State::close()
+[12:17:03:24:22 Thread#3/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:24:22 Thread#3/TRACE] >> shut down IO complete
+[12:17:03:24:29 Thread#3/TRACE] >> Conn::read_head
+[12:17:03:24:29 Thread#3/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:24:30 Thread#16/TRACE] >> Conn::read_head
+[12:17:03:24:30 Thread#16/TRACE] >> received 296 bytes
+[12:17:03:24:30 Thread#16/TRACE] >> parse_headers;
+[12:17:03:24:30 Thread#16/TRACE] >> -> parse_headers;
+[12:17:03:24:30 Thread#16/TRACE] >> Request.parse bytes=296
+[12:17:03:24:30 Thread#16/TRACE] >> Request.parse Complete(190)
+[12:17:03:24:30 Thread#16/TRACE] >> <- parse_headers;
+[12:17:03:24:30 Thread#16/TRACE] >> -- parse_headers;
+[12:17:03:24:30 Thread#16/DEBUG] >> parsed 6 headers
+[12:17:03:24:30 Thread#16/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:24:30 Thread#16/TRACE] >> remote disabling keep-alive
+[12:17:03:24:30 Thread#16/TRACE] >> decode; state=Length(106)
+[12:17:03:24:30 Thread#16/DEBUG] >> incoming body completed
+[12:17:03:24:30 Thread#16/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "authorization": "Bearer",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:24:30 Thread#16/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:24:30 Thread#16/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:24:30 Thread#16/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:24:30 Thread#16/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:24:30 Thread#16/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:24:30 Thread#16/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:24:30 Thread#16/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:24:30 Thread#16/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:24:30 Thread#16/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:24:30 Thread#16/ERR] >> No matching routes for POST /servers/test/channels/hi/messages application/json.
+[12:17:03:24:30 Thread#16/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:24:30 Thread#16/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "x-frame-options": "SAMEORIGIN",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:24:30 Thread#16/INFO] >> Response succeeded.
+[12:17:03:24:30 Thread#16/TRACE] >> encode_headers;
+[12:17:03:24:30 Thread#16/TRACE] >> -> encode_headers;
+[12:17:03:24:30 Thread#16/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:24:30 Thread#16/TRACE] >> <- encode_headers;
+[12:17:03:24:30 Thread#16/TRACE] >> -- encode_headers;
+[12:17:03:24:30 Thread#16/TRACE] >> sized write, len = 501
+[12:17:03:24:30 Thread#16/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:24:30 Thread#16/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:24:30 Thread#16/DEBUG] >> flushed 756 bytes
+[12:17:03:24:30 Thread#16/TRACE] >> State::close()
+[12:17:03:24:30 Thread#16/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:24:30 Thread#16/TRACE] >> shut down IO complete
+[12:17:03:24:34 Thread#16/TRACE] >> Conn::read_head
+[12:17:03:24:34 Thread#16/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:24:35 Thread#3/TRACE] >> Conn::read_head
+[12:17:03:24:35 Thread#3/TRACE] >> received 272 bytes
+[12:17:03:24:35 Thread#3/TRACE] >> parse_headers;
+[12:17:03:24:35 Thread#3/TRACE] >> -> parse_headers;
+[12:17:03:24:35 Thread#3/TRACE] >> Request.parse bytes=272
+[12:17:03:24:35 Thread#3/TRACE] >> Request.parse Complete(166)
+[12:17:03:24:35 Thread#3/TRACE] >> <- parse_headers;
+[12:17:03:24:35 Thread#3/TRACE] >> -- parse_headers;
+[12:17:03:24:35 Thread#3/DEBUG] >> parsed 5 headers
+[12:17:03:24:35 Thread#3/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:24:35 Thread#3/TRACE] >> remote disabling keep-alive
+[12:17:03:24:35 Thread#3/TRACE] >> decode; state=Length(106)
+[12:17:03:24:35 Thread#3/DEBUG] >> incoming body completed
+[12:17:03:24:35 Thread#3/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:24:35 Thread#3/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:24:35 Thread#3/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:24:35 Thread#3/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:24:35 Thread#3/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:24:35 Thread#3/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:24:35 Thread#3/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:24:35 Thread#3/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:24:35 Thread#3/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:24:35 Thread#3/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:24:35 Thread#3/ERR] >> No matching routes for POST /servers/test/channels/hi/messages application/json.
+[12:17:03:24:35 Thread#3/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:24:35 Thread#3/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "x-frame-options": "SAMEORIGIN",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:24:35 Thread#3/INFO] >> Response succeeded.
+[12:17:03:24:35 Thread#3/TRACE] >> encode_headers;
+[12:17:03:24:35 Thread#3/TRACE] >> -> encode_headers;
+[12:17:03:24:35 Thread#3/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:24:35 Thread#3/TRACE] >> <- encode_headers;
+[12:17:03:24:35 Thread#3/TRACE] >> -- encode_headers;
+[12:17:03:24:35 Thread#3/TRACE] >> sized write, len = 501
+[12:17:03:24:35 Thread#3/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:24:35 Thread#3/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:24:35 Thread#3/DEBUG] >> flushed 756 bytes
+[12:17:03:24:35 Thread#3/TRACE] >> State::close()
+[12:17:03:24:35 Thread#3/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:24:35 Thread#3/TRACE] >> shut down IO complete
+[12:17:03:24:59 Thread#3/WARN] >> Received SIGINT. Requesting shutdown.
+[12:17:03:24:59 Thread#1/INFO] >> Shutdown requested. Waiting for pending I/O...
+[12:17:03:24:59 Thread#1/DEBUG] >> signal received, starting graceful shutdown
+[12:17:03:24:59 Thread#1/INFO] >> Graceful shutdown completed successfully.
+[12:17:03:25:01 Thread#1/INFO] >> Running server
+[12:17:03:25:01 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:25:01 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:03:25:01 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:03:25:01 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:03:25:01 Thread#1/INFO] >> port: 8000
+[12:17:03:25:01 Thread#1/INFO] >> workers: 16
+[12:17:03:25:01 Thread#1/INFO] >> max blocking threads: 512
+[12:17:03:25:01 Thread#1/INFO] >> ident: Rocket
+[12:17:03:25:01 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:03:25:01 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:03:25:01 Thread#1/INFO] >> temp dir: /tmp
+[12:17:03:25:01 Thread#1/INFO] >> http/2: true
+[12:17:03:25:01 Thread#1/INFO] >> keep-alive: 5s
+[12:17:03:25:01 Thread#1/INFO] >> tls: disabled
+[12:17:03:25:01 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:03:25:01 Thread#1/INFO] >> log level: normal
+[12:17:03:25:01 Thread#1/INFO] >> cli colors: true
+[12:17:03:25:01 Thread#1/INFO] >> 📬 Routes:
+[12:17:03:25:01 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:03:25:01 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:03:25:01 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:03:25:01 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:03:25:01 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:03:25:01 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:03:25:01 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:03:25:01 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:03:25:01 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:03:25:01 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:03:25:01 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:03:25:01 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:03:25:01 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:03:25:01 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:03:25:01 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:03:25:01 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:03:25:01 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:03:25:01 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:03:25:01 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:03:25:01 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:03:25:01 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:03:25:01 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:03:25:01 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:03:25:01 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:03:25:01 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:25:01 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:25:01 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:03:25:01 Thread#1/INFO] >> 📡 Fairings:
+[12:17:03:25:01 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:03:25:01 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:03:25:01 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:03:25:01 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:03:25:01 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:03:25:01 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:03:25:01 Thread#1/ERR] >> Starting DB on port 8000
+[12:17:03:25:12 Thread#16/TRACE] >> Conn::read_head
+[12:17:03:25:12 Thread#16/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:25:12 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:25:12 Thread#4/TRACE] >> received 316 bytes
+[12:17:03:25:12 Thread#4/TRACE] >> parse_headers;
+[12:17:03:25:12 Thread#4/TRACE] >> -> parse_headers;
+[12:17:03:25:12 Thread#4/TRACE] >> Request.parse bytes=316
+[12:17:03:25:12 Thread#4/TRACE] >> Request.parse Complete(210)
+[12:17:03:25:12 Thread#4/TRACE] >> <- parse_headers;
+[12:17:03:25:12 Thread#4/TRACE] >> -- parse_headers;
+[12:17:03:25:12 Thread#4/DEBUG] >> parsed 6 headers
+[12:17:03:25:12 Thread#4/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:25:12 Thread#4/TRACE] >> remote disabling keep-alive
+[12:17:03:25:12 Thread#4/TRACE] >> decode; state=Length(106)
+[12:17:03:25:12 Thread#4/DEBUG] >> incoming body completed
+[12:17:03:25:12 Thread#4/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "authorization": "Bearer 81237919847219879879",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:12 Thread#4/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:25:12 Thread#4/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:25:12 Thread#4/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:25:12 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:25:12 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:25:12 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:25:12 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:25:12 Thread#4/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:25:12 Thread#4/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:25:12 Thread#4/ERR] >> No matching routes for POST /servers/test/channels/hi/messages application/json.
+[12:17:03:25:12 Thread#4/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:25:12 Thread#4/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:12 Thread#4/INFO] >> Response succeeded.
+[12:17:03:25:12 Thread#4/TRACE] >> encode_headers;
+[12:17:03:25:12 Thread#4/TRACE] >> -> encode_headers;
+[12:17:03:25:12 Thread#4/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:25:12 Thread#4/TRACE] >> <- encode_headers;
+[12:17:03:25:12 Thread#4/TRACE] >> -- encode_headers;
+[12:17:03:25:12 Thread#4/TRACE] >> sized write, len = 501
+[12:17:03:25:12 Thread#4/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:25:12 Thread#4/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:25:12 Thread#4/DEBUG] >> flushed 756 bytes
+[12:17:03:25:12 Thread#4/TRACE] >> State::close()
+[12:17:03:25:12 Thread#4/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:25:12 Thread#4/TRACE] >> shut down IO complete
+[12:17:03:25:13 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:25:13 Thread#4/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:25:13 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:25:13 Thread#14/TRACE] >> received 316 bytes
+[12:17:03:25:13 Thread#14/TRACE] >> parse_headers;
+[12:17:03:25:13 Thread#14/TRACE] >> -> parse_headers;
+[12:17:03:25:13 Thread#14/TRACE] >> Request.parse bytes=316
+[12:17:03:25:13 Thread#14/TRACE] >> Request.parse Complete(210)
+[12:17:03:25:13 Thread#14/TRACE] >> <- parse_headers;
+[12:17:03:25:13 Thread#14/TRACE] >> -- parse_headers;
+[12:17:03:25:13 Thread#14/DEBUG] >> parsed 6 headers
+[12:17:03:25:13 Thread#14/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:25:13 Thread#14/TRACE] >> remote disabling keep-alive
+[12:17:03:25:13 Thread#14/TRACE] >> decode; state=Length(106)
+[12:17:03:25:13 Thread#14/DEBUG] >> incoming body completed
+[12:17:03:25:13 Thread#14/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "authorization": "Bearer 81237919847219879879",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:13 Thread#14/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:25:13 Thread#14/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:25:13 Thread#14/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:25:13 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:25:13 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:25:13 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:25:13 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:25:13 Thread#14/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:25:13 Thread#14/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:25:13 Thread#14/ERR] >> No matching routes for POST /servers/test/channels/hi/messages application/json.
+[12:17:03:25:13 Thread#14/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:25:13 Thread#14/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:13 Thread#14/INFO] >> Response succeeded.
+[12:17:03:25:13 Thread#14/TRACE] >> encode_headers;
+[12:17:03:25:13 Thread#14/TRACE] >> -> encode_headers;
+[12:17:03:25:13 Thread#14/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:25:13 Thread#14/TRACE] >> <- encode_headers;
+[12:17:03:25:13 Thread#14/TRACE] >> -- encode_headers;
+[12:17:03:25:13 Thread#14/TRACE] >> sized write, len = 501
+[12:17:03:25:13 Thread#14/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:25:13 Thread#14/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:25:13 Thread#14/DEBUG] >> flushed 756 bytes
+[12:17:03:25:13 Thread#14/TRACE] >> State::close()
+[12:17:03:25:13 Thread#14/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:25:13 Thread#14/TRACE] >> shut down IO complete
+[12:17:03:25:14 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:25:14 Thread#14/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:25:14 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:25:14 Thread#4/TRACE] >> received 316 bytes
+[12:17:03:25:14 Thread#4/TRACE] >> parse_headers;
+[12:17:03:25:14 Thread#4/TRACE] >> -> parse_headers;
+[12:17:03:25:14 Thread#4/TRACE] >> Request.parse bytes=316
+[12:17:03:25:14 Thread#4/TRACE] >> Request.parse Complete(210)
+[12:17:03:25:14 Thread#4/TRACE] >> <- parse_headers;
+[12:17:03:25:14 Thread#4/TRACE] >> -- parse_headers;
+[12:17:03:25:14 Thread#4/DEBUG] >> parsed 6 headers
+[12:17:03:25:14 Thread#4/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:25:14 Thread#4/TRACE] >> remote disabling keep-alive
+[12:17:03:25:14 Thread#4/TRACE] >> decode; state=Length(106)
+[12:17:03:25:14 Thread#4/DEBUG] >> incoming body completed
+[12:17:03:25:14 Thread#4/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "authorization": "Bearer 81237919847219879879",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:14 Thread#4/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:25:14 Thread#4/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:25:14 Thread#4/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:25:14 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:25:14 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:25:14 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:25:14 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:25:14 Thread#4/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:25:14 Thread#4/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:25:14 Thread#4/ERR] >> No matching routes for POST /servers/test/channels/hi/messages application/json.
+[12:17:03:25:14 Thread#4/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:25:14 Thread#4/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:14 Thread#4/INFO] >> Response succeeded.
+[12:17:03:25:14 Thread#4/TRACE] >> encode_headers;
+[12:17:03:25:14 Thread#4/TRACE] >> -> encode_headers;
+[12:17:03:25:14 Thread#4/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:25:14 Thread#4/TRACE] >> <- encode_headers;
+[12:17:03:25:14 Thread#4/TRACE] >> -- encode_headers;
+[12:17:03:25:14 Thread#4/TRACE] >> sized write, len = 501
+[12:17:03:25:14 Thread#4/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:25:14 Thread#4/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:25:14 Thread#4/DEBUG] >> flushed 756 bytes
+[12:17:03:25:14 Thread#4/TRACE] >> State::close()
+[12:17:03:25:14 Thread#4/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:25:14 Thread#4/TRACE] >> shut down IO complete
+[12:17:03:25:19 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:25:19 Thread#4/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:25:19 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:25:19 Thread#14/TRACE] >> received 316 bytes
+[12:17:03:25:19 Thread#14/TRACE] >> parse_headers;
+[12:17:03:25:19 Thread#14/TRACE] >> -> parse_headers;
+[12:17:03:25:19 Thread#14/TRACE] >> Request.parse bytes=316
+[12:17:03:25:19 Thread#14/TRACE] >> Request.parse Complete(210)
+[12:17:03:25:19 Thread#14/TRACE] >> <- parse_headers;
+[12:17:03:25:19 Thread#14/TRACE] >> -- parse_headers;
+[12:17:03:25:19 Thread#14/DEBUG] >> parsed 6 headers
+[12:17:03:25:19 Thread#14/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:25:19 Thread#14/TRACE] >> remote disabling keep-alive
+[12:17:03:25:19 Thread#14/TRACE] >> decode; state=Length(106)
+[12:17:03:25:19 Thread#14/DEBUG] >> incoming body completed
+[12:17:03:25:19 Thread#14/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "authorization": "Bearer 81237919847219879879",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:19 Thread#14/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:25:19 Thread#14/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:25:19 Thread#14/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:25:19 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:25:19 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:25:19 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:25:19 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:25:19 Thread#14/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:25:19 Thread#14/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:25:19 Thread#14/ERR] >> No matching routes for POST /servers/test/channels/hi/messages application/json.
+[12:17:03:25:19 Thread#14/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:25:19 Thread#14/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:19 Thread#14/INFO] >> Response succeeded.
+[12:17:03:25:19 Thread#14/TRACE] >> encode_headers;
+[12:17:03:25:19 Thread#14/TRACE] >> -> encode_headers;
+[12:17:03:25:19 Thread#14/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:25:19 Thread#14/TRACE] >> <- encode_headers;
+[12:17:03:25:19 Thread#14/TRACE] >> -- encode_headers;
+[12:17:03:25:19 Thread#14/TRACE] >> sized write, len = 501
+[12:17:03:25:19 Thread#14/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:25:19 Thread#14/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:25:19 Thread#14/DEBUG] >> flushed 756 bytes
+[12:17:03:25:19 Thread#14/TRACE] >> State::close()
+[12:17:03:25:19 Thread#14/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:25:19 Thread#14/TRACE] >> shut down IO complete
+[12:17:03:25:22 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:25:22 Thread#14/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:25:23 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:25:23 Thread#4/TRACE] >> received 272 bytes
+[12:17:03:25:23 Thread#4/TRACE] >> parse_headers;
+[12:17:03:25:23 Thread#4/TRACE] >> -> parse_headers;
+[12:17:03:25:23 Thread#4/TRACE] >> Request.parse bytes=272
+[12:17:03:25:23 Thread#4/TRACE] >> Request.parse Complete(166)
+[12:17:03:25:23 Thread#4/TRACE] >> <- parse_headers;
+[12:17:03:25:23 Thread#4/TRACE] >> -- parse_headers;
+[12:17:03:25:23 Thread#4/DEBUG] >> parsed 5 headers
+[12:17:03:25:23 Thread#4/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:25:23 Thread#4/TRACE] >> remote disabling keep-alive
+[12:17:03:25:23 Thread#4/TRACE] >> decode; state=Length(106)
+[12:17:03:25:23 Thread#4/DEBUG] >> incoming body completed
+[12:17:03:25:23 Thread#4/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:23 Thread#4/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:25:23 Thread#4/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:25:23 Thread#4/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:25:23 Thread#4/WARN] >> Request guard `AuthenticatedUser` failed: Error { code: "MISSING_TOKEN", message: "Authentication token is required", details: None }.
+[12:17:03:25:23 Thread#4/INFO] >> Outcome: Error(401 Unauthorized)
+[12:17:03:25:23 Thread#4/WARN] >> No 401 catcher registered. Using Rocket default.
+[12:17:03:25:23 Thread#4/DEBUG] >> sending response: Response {
+    status: 401,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "440",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:25:23 Thread#4/INFO] >> Response succeeded.
+[12:17:03:25:23 Thread#4/TRACE] >> encode_headers;
+[12:17:03:25:23 Thread#4/TRACE] >> -> encode_headers;
+[12:17:03:25:23 Thread#4/TRACE] >> Server::encode status=401, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:25:23 Thread#4/TRACE] >> <- encode_headers;
+[12:17:03:25:23 Thread#4/TRACE] >> -- encode_headers;
+[12:17:03:25:23 Thread#4/TRACE] >> sized write, len = 440
+[12:17:03:25:23 Thread#4/TRACE] >> buffer.queue self.len=245 buf.len=440
+[12:17:03:25:23 Thread#4/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:25:23 Thread#4/DEBUG] >> flushed 685 bytes
+[12:17:03:25:23 Thread#4/TRACE] >> State::close()
+[12:17:03:25:23 Thread#4/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:25:23 Thread#4/TRACE] >> shut down IO complete
+[12:17:03:26:11 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:26:11 Thread#4/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:26:12 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:26:12 Thread#14/TRACE] >> received 452 bytes
+[12:17:03:26:12 Thread#14/TRACE] >> parse_headers;
+[12:17:03:26:12 Thread#14/TRACE] >> -> parse_headers;
+[12:17:03:26:12 Thread#14/TRACE] >> Request.parse bytes=452
+[12:17:03:26:12 Thread#14/TRACE] >> Request.parse Complete(346)
+[12:17:03:26:12 Thread#14/TRACE] >> <- parse_headers;
+[12:17:03:26:12 Thread#14/TRACE] >> -- parse_headers;
+[12:17:03:26:12 Thread#14/DEBUG] >> parsed 6 headers
+[12:17:03:26:12 Thread#14/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:26:12 Thread#14/TRACE] >> remote disabling keep-alive
+[12:17:03:26:12 Thread#14/TRACE] >> decode; state=Length(106)
+[12:17:03:26:12 Thread#14/DEBUG] >> incoming body completed
+[12:17:03:26:12 Thread#14/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:26:12 Thread#14/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:26:12 Thread#14/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:26:12 Thread#14/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:26:12 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:26:12 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:26:12 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:26:12 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:26:12 Thread#14/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:26:12 Thread#14/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:26:12 Thread#14/ERR] >> No matching routes for POST /servers/test/channels/hi/messages application/json.
+[12:17:03:26:12 Thread#14/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:26:12 Thread#14/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:26:12 Thread#14/INFO] >> Response succeeded.
+[12:17:03:26:12 Thread#14/TRACE] >> encode_headers;
+[12:17:03:26:12 Thread#14/TRACE] >> -> encode_headers;
+[12:17:03:26:12 Thread#14/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:26:12 Thread#14/TRACE] >> <- encode_headers;
+[12:17:03:26:12 Thread#14/TRACE] >> -- encode_headers;
+[12:17:03:26:12 Thread#14/TRACE] >> sized write, len = 501
+[12:17:03:26:12 Thread#14/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:26:12 Thread#14/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:26:12 Thread#14/DEBUG] >> flushed 756 bytes
+[12:17:03:26:12 Thread#14/TRACE] >> State::close()
+[12:17:03:26:12 Thread#14/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:26:12 Thread#14/TRACE] >> shut down IO complete
+[12:17:03:26:13 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:26:13 Thread#14/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:26:14 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:26:14 Thread#4/TRACE] >> received 452 bytes
+[12:17:03:26:14 Thread#4/TRACE] >> parse_headers;
+[12:17:03:26:14 Thread#4/TRACE] >> -> parse_headers;
+[12:17:03:26:14 Thread#4/TRACE] >> Request.parse bytes=452
+[12:17:03:26:14 Thread#4/TRACE] >> Request.parse Complete(346)
+[12:17:03:26:14 Thread#4/TRACE] >> <- parse_headers;
+[12:17:03:26:14 Thread#4/TRACE] >> -- parse_headers;
+[12:17:03:26:14 Thread#4/DEBUG] >> parsed 6 headers
+[12:17:03:26:14 Thread#4/DEBUG] >> incoming body is content-length (106 bytes)
+[12:17:03:26:14 Thread#4/TRACE] >> remote disabling keep-alive
+[12:17:03:26:14 Thread#4/TRACE] >> decode; state=Length(106)
+[12:17:03:26:14 Thread#4/DEBUG] >> incoming body completed
+[12:17:03:26:14 Thread#4/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "application/json",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        "content-length": "106",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:26:14 Thread#4/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:26:14 Thread#4/INFO] >> POST /servers/test/channels/hi/messages application/json:
+[12:17:03:26:14 Thread#4/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:26:14 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:26:14 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:26:14 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:26:14 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:26:14 Thread#4/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:26:14 Thread#4/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:26:14 Thread#4/ERR] >> No matching routes for POST /servers/test/channels/hi/messages application/json.
+[12:17:03:26:14 Thread#4/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:26:14 Thread#4/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:26:14 Thread#4/INFO] >> Response succeeded.
+[12:17:03:26:14 Thread#4/TRACE] >> encode_headers;
+[12:17:03:26:14 Thread#4/TRACE] >> -> encode_headers;
+[12:17:03:26:14 Thread#4/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:26:14 Thread#4/TRACE] >> <- encode_headers;
+[12:17:03:26:14 Thread#4/TRACE] >> -- encode_headers;
+[12:17:03:26:14 Thread#4/TRACE] >> sized write, len = 501
+[12:17:03:26:14 Thread#4/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:26:14 Thread#4/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:26:14 Thread#4/DEBUG] >> flushed 756 bytes
+[12:17:03:26:14 Thread#4/TRACE] >> State::close()
+[12:17:03:26:14 Thread#4/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:26:14 Thread#4/TRACE] >> shut down IO complete
+[12:17:03:27:39 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:27:39 Thread#4/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:27:40 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:27:40 Thread#14/TRACE] >> received 384 bytes
+[12:17:03:27:40 Thread#14/TRACE] >> parse_headers;
+[12:17:03:27:40 Thread#14/TRACE] >> -> parse_headers;
+[12:17:03:27:40 Thread#14/TRACE] >> Request.parse bytes=384
+[12:17:03:27:40 Thread#14/TRACE] >> Request.parse Complete(329)
+[12:17:03:27:40 Thread#14/TRACE] >> <- parse_headers;
+[12:17:03:27:40 Thread#14/TRACE] >> -- parse_headers;
+[12:17:03:27:40 Thread#14/DEBUG] >> parsed 6 headers
+[12:17:03:27:40 Thread#14/DEBUG] >> incoming body is content-length (55 bytes)
+[12:17:03:27:40 Thread#14/TRACE] >> remote disabling keep-alive
+[12:17:03:27:40 Thread#14/TRACE] >> decode; state=Length(55)
+[12:17:03:27:40 Thread#14/DEBUG] >> incoming body completed
+[12:17:03:27:40 Thread#14/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        "content-length": "55",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:27:40 Thread#14/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:27:40 Thread#14/INFO] >> POST /servers/test/channels/hi/messages:
+[12:17:03:27:40 Thread#14/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:27:40 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:27:40 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:27:40 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:27:40 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:27:40 Thread#14/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` is forwarding.
+[12:17:03:27:40 Thread#14/INFO] >> Outcome: Forward(415 Unsupported Media Type)
+[12:17:03:27:40 Thread#14/ERR] >> No matching routes for POST /servers/test/channels/hi/messages.
+[12:17:03:27:40 Thread#14/WARN] >> No 415 catcher registered. Using Rocket default.
+[12:17:03:27:40 Thread#14/DEBUG] >> sending response: Response {
+    status: 415,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "501",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:27:40 Thread#14/INFO] >> Response succeeded.
+[12:17:03:27:40 Thread#14/TRACE] >> encode_headers;
+[12:17:03:27:40 Thread#14/TRACE] >> -> encode_headers;
+[12:17:03:27:40 Thread#14/TRACE] >> Server::encode status=415, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:27:40 Thread#14/TRACE] >> <- encode_headers;
+[12:17:03:27:40 Thread#14/TRACE] >> -- encode_headers;
+[12:17:03:27:40 Thread#14/TRACE] >> sized write, len = 501
+[12:17:03:27:40 Thread#14/TRACE] >> buffer.queue self.len=255 buf.len=501
+[12:17:03:27:40 Thread#14/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:27:40 Thread#14/DEBUG] >> flushed 756 bytes
+[12:17:03:27:40 Thread#14/TRACE] >> State::close()
+[12:17:03:27:40 Thread#14/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:27:40 Thread#14/TRACE] >> shut down IO complete
+[12:17:03:27:55 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:27:55 Thread#14/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:27:56 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:27:56 Thread#4/TRACE] >> received 403 bytes
+[12:17:03:27:56 Thread#4/TRACE] >> parse_headers;
+[12:17:03:27:56 Thread#4/TRACE] >> -> parse_headers;
+[12:17:03:27:56 Thread#4/TRACE] >> Request.parse bytes=403
+[12:17:03:27:56 Thread#4/TRACE] >> Request.parse Complete(348)
+[12:17:03:27:56 Thread#4/TRACE] >> <- parse_headers;
+[12:17:03:27:56 Thread#4/TRACE] >> -- parse_headers;
+[12:17:03:27:56 Thread#4/DEBUG] >> parsed 6 headers
+[12:17:03:27:56 Thread#4/DEBUG] >> incoming body is content-length (55 bytes)
+[12:17:03:27:56 Thread#4/TRACE] >> remote disabling keep-alive
+[12:17:03:27:56 Thread#4/TRACE] >> decode; state=Length(55)
+[12:17:03:27:56 Thread#4/DEBUG] >> incoming body completed
+[12:17:03:27:56 Thread#4/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "multipart/form-data",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        "content-length": "55",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:27:56 Thread#4/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:27:56 Thread#4/INFO] >> POST /servers/test/channels/hi/messages multipart/form-data:
+[12:17:03:27:56 Thread#4/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:27:56 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:27:56 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:27:56 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:27:56 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:27:56 Thread#4/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` failed: Errors([Error { name: None, value: None, kind: Multipart(multipart boundary not found in Content-Type), entity: Form }]).
+[12:17:03:27:56 Thread#4/INFO] >> Outcome: Error(400 Bad Request)
+[12:17:03:27:56 Thread#4/WARN] >> No 400 catcher registered. Using Rocket default.
+[12:17:03:27:56 Thread#4/DEBUG] >> sending response: Response {
+    status: 400,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "471",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:27:56 Thread#4/INFO] >> Response succeeded.
+[12:17:03:27:56 Thread#4/TRACE] >> encode_headers;
+[12:17:03:27:56 Thread#4/TRACE] >> -> encode_headers;
+[12:17:03:27:56 Thread#4/TRACE] >> Server::encode status=400, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:27:56 Thread#4/TRACE] >> <- encode_headers;
+[12:17:03:27:56 Thread#4/TRACE] >> -- encode_headers;
+[12:17:03:27:56 Thread#4/TRACE] >> sized write, len = 471
+[12:17:03:27:56 Thread#4/TRACE] >> buffer.queue self.len=244 buf.len=471
+[12:17:03:27:56 Thread#4/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:27:56 Thread#4/DEBUG] >> flushed 715 bytes
+[12:17:03:27:56 Thread#4/TRACE] >> State::close()
+[12:17:03:27:56 Thread#4/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:27:56 Thread#4/TRACE] >> shut down IO complete
+[12:17:03:27:57 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:27:57 Thread#4/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:27:57 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:27:57 Thread#14/TRACE] >> received 403 bytes
+[12:17:03:27:57 Thread#14/TRACE] >> parse_headers;
+[12:17:03:27:57 Thread#14/TRACE] >> -> parse_headers;
+[12:17:03:27:57 Thread#14/TRACE] >> Request.parse bytes=403
+[12:17:03:27:57 Thread#14/TRACE] >> Request.parse Complete(348)
+[12:17:03:27:57 Thread#14/TRACE] >> <- parse_headers;
+[12:17:03:27:57 Thread#14/TRACE] >> -- parse_headers;
+[12:17:03:27:57 Thread#14/DEBUG] >> parsed 6 headers
+[12:17:03:27:57 Thread#14/DEBUG] >> incoming body is content-length (55 bytes)
+[12:17:03:27:57 Thread#14/TRACE] >> remote disabling keep-alive
+[12:17:03:27:57 Thread#14/TRACE] >> decode; state=Length(55)
+[12:17:03:27:57 Thread#14/DEBUG] >> incoming body completed
+[12:17:03:27:57 Thread#14/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "multipart/form-data",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        "content-length": "55",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:27:57 Thread#14/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:27:57 Thread#14/INFO] >> POST /servers/test/channels/hi/messages multipart/form-data:
+[12:17:03:27:57 Thread#14/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:27:57 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:27:57 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:27:57 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:27:57 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:27:57 Thread#14/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` failed: Errors([Error { name: None, value: None, kind: Multipart(multipart boundary not found in Content-Type), entity: Form }]).
+[12:17:03:27:57 Thread#14/INFO] >> Outcome: Error(400 Bad Request)
+[12:17:03:27:57 Thread#14/WARN] >> No 400 catcher registered. Using Rocket default.
+[12:17:03:27:57 Thread#14/DEBUG] >> sending response: Response {
+    status: 400,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "471",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:27:57 Thread#14/INFO] >> Response succeeded.
+[12:17:03:27:57 Thread#14/TRACE] >> encode_headers;
+[12:17:03:27:57 Thread#14/TRACE] >> -> encode_headers;
+[12:17:03:27:57 Thread#14/TRACE] >> Server::encode status=400, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:27:57 Thread#14/TRACE] >> <- encode_headers;
+[12:17:03:27:57 Thread#14/TRACE] >> -- encode_headers;
+[12:17:03:27:57 Thread#14/TRACE] >> sized write, len = 471
+[12:17:03:27:57 Thread#14/TRACE] >> buffer.queue self.len=244 buf.len=471
+[12:17:03:27:57 Thread#14/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:27:57 Thread#14/DEBUG] >> flushed 715 bytes
+[12:17:03:27:57 Thread#14/TRACE] >> State::close()
+[12:17:03:27:57 Thread#14/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:27:57 Thread#14/TRACE] >> shut down IO complete
+[12:17:03:28:06 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:28:06 Thread#14/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:28:07 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:28:07 Thread#4/TRACE] >> received 409 bytes
+[12:17:03:28:07 Thread#4/TRACE] >> parse_headers;
+[12:17:03:28:07 Thread#4/TRACE] >> -> parse_headers;
+[12:17:03:28:07 Thread#4/TRACE] >> Request.parse bytes=409
+[12:17:03:28:07 Thread#4/TRACE] >> Request.parse Complete(348)
+[12:17:03:28:07 Thread#4/TRACE] >> <- parse_headers;
+[12:17:03:28:07 Thread#4/TRACE] >> -- parse_headers;
+[12:17:03:28:07 Thread#4/DEBUG] >> parsed 6 headers
+[12:17:03:28:07 Thread#4/DEBUG] >> incoming body is content-length (61 bytes)
+[12:17:03:28:07 Thread#4/TRACE] >> remote disabling keep-alive
+[12:17:03:28:07 Thread#4/TRACE] >> decode; state=Length(61)
+[12:17:03:28:07 Thread#4/DEBUG] >> incoming body completed
+[12:17:03:28:07 Thread#4/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "multipart/form-data",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        "content-length": "61",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:28:07 Thread#4/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:28:07 Thread#4/INFO] >> POST /servers/test/channels/hi/messages multipart/form-data:
+[12:17:03:28:07 Thread#4/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:28:07 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:28:07 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:28:07 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:28:07 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:28:07 Thread#4/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` failed: Errors([Error { name: None, value: None, kind: Multipart(multipart boundary not found in Content-Type), entity: Form }]).
+[12:17:03:28:07 Thread#4/INFO] >> Outcome: Error(400 Bad Request)
+[12:17:03:28:07 Thread#4/WARN] >> No 400 catcher registered. Using Rocket default.
+[12:17:03:28:07 Thread#4/DEBUG] >> sending response: Response {
+    status: 400,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "471",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:28:07 Thread#4/INFO] >> Response succeeded.
+[12:17:03:28:07 Thread#4/TRACE] >> encode_headers;
+[12:17:03:28:07 Thread#4/TRACE] >> -> encode_headers;
+[12:17:03:28:07 Thread#4/TRACE] >> Server::encode status=400, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:28:07 Thread#4/TRACE] >> <- encode_headers;
+[12:17:03:28:07 Thread#4/TRACE] >> -- encode_headers;
+[12:17:03:28:07 Thread#4/TRACE] >> sized write, len = 471
+[12:17:03:28:07 Thread#4/TRACE] >> buffer.queue self.len=244 buf.len=471
+[12:17:03:28:07 Thread#4/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:28:07 Thread#4/DEBUG] >> flushed 715 bytes
+[12:17:03:28:07 Thread#4/TRACE] >> State::close()
+[12:17:03:28:07 Thread#4/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:28:07 Thread#4/TRACE] >> shut down IO complete
+[12:17:03:28:07 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:28:07 Thread#4/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:28:07 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:28:07 Thread#14/TRACE] >> received 409 bytes
+[12:17:03:28:07 Thread#14/TRACE] >> parse_headers;
+[12:17:03:28:07 Thread#14/TRACE] >> -> parse_headers;
+[12:17:03:28:07 Thread#14/TRACE] >> Request.parse bytes=409
+[12:17:03:28:07 Thread#14/TRACE] >> Request.parse Complete(348)
+[12:17:03:28:07 Thread#14/TRACE] >> <- parse_headers;
+[12:17:03:28:07 Thread#14/TRACE] >> -- parse_headers;
+[12:17:03:28:07 Thread#14/DEBUG] >> parsed 6 headers
+[12:17:03:28:07 Thread#14/DEBUG] >> incoming body is content-length (61 bytes)
+[12:17:03:28:07 Thread#14/TRACE] >> remote disabling keep-alive
+[12:17:03:28:07 Thread#14/TRACE] >> decode; state=Length(61)
+[12:17:03:28:07 Thread#14/DEBUG] >> incoming body completed
+[12:17:03:28:07 Thread#14/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "multipart/form-data",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        "content-length": "61",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:28:07 Thread#14/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:28:07 Thread#14/INFO] >> POST /servers/test/channels/hi/messages multipart/form-data:
+[12:17:03:28:07 Thread#14/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:28:07 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:28:07 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:28:07 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:28:07 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:28:07 Thread#14/WARN] >> Data guard `Form < CreateMessageForm < '_ > >` failed: Errors([Error { name: None, value: None, kind: Multipart(multipart boundary not found in Content-Type), entity: Form }]).
+[12:17:03:28:07 Thread#14/INFO] >> Outcome: Error(400 Bad Request)
+[12:17:03:28:07 Thread#14/WARN] >> No 400 catcher registered. Using Rocket default.
+[12:17:03:28:07 Thread#14/DEBUG] >> sending response: Response {
+    status: 400,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "471",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:28:07 Thread#14/INFO] >> Response succeeded.
+[12:17:03:28:07 Thread#14/TRACE] >> encode_headers;
+[12:17:03:28:07 Thread#14/TRACE] >> -> encode_headers;
+[12:17:03:28:07 Thread#14/TRACE] >> Server::encode status=400, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:28:07 Thread#14/TRACE] >> <- encode_headers;
+[12:17:03:28:07 Thread#14/TRACE] >> -- encode_headers;
+[12:17:03:28:07 Thread#14/TRACE] >> sized write, len = 471
+[12:17:03:28:07 Thread#14/TRACE] >> buffer.queue self.len=244 buf.len=471
+[12:17:03:28:07 Thread#14/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:28:07 Thread#14/DEBUG] >> flushed 715 bytes
+[12:17:03:28:07 Thread#14/TRACE] >> State::close()
+[12:17:03:28:07 Thread#14/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:28:07 Thread#14/TRACE] >> shut down IO complete
+[12:17:03:28:13 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:28:13 Thread#14/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:28:13 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:28:13 Thread#4/TRACE] >> received 749 bytes
+[12:17:03:28:13 Thread#4/TRACE] >> parse_headers;
+[12:17:03:28:13 Thread#4/TRACE] >> -> parse_headers;
+[12:17:03:28:13 Thread#4/TRACE] >> Request.parse bytes=749
+[12:17:03:28:13 Thread#4/TRACE] >> Request.parse Complete(398)
+[12:17:03:28:13 Thread#4/TRACE] >> <- parse_headers;
+[12:17:03:28:13 Thread#4/TRACE] >> -- parse_headers;
+[12:17:03:28:13 Thread#4/DEBUG] >> parsed 6 headers
+[12:17:03:28:13 Thread#4/DEBUG] >> incoming body is content-length (351 bytes)
+[12:17:03:28:13 Thread#4/TRACE] >> remote disabling keep-alive
+[12:17:03:28:13 Thread#4/TRACE] >> decode; state=Length(351)
+[12:17:03:28:13 Thread#4/DEBUG] >> incoming body completed
+[12:17:03:28:13 Thread#4/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "multipart/form-data; boundary=PieBoundary123456789012345678901234567",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        "content-length": "351",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:28:13 Thread#4/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:28:13 Thread#4/INFO] >> POST /servers/test/channels/hi/messages multipart/form-data:
+[12:17:03:28:13 Thread#4/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:28:13 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:28:13 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:28:13 Thread#4/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:28:13 Thread#4/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:28:13 Thread#4/TRACE] >> multipart field: Field { state: Mutex { data: MultipartState { buffer: StreamBuffer, boundary: "PieBoundary123456789012345678901234567", stage: ReadingFieldData, next_field_idx: 1, curr_field_name: Some("content"), curr_field_size_limit: 2097152, curr_field_size_counter: 0, constraints: Constraints { size_limit: SizeLimit { whole_stream: 2097152, per_field: 2097152, field_map: {} }, allowed_fields: None } }}, done: false, headers: {"content-disposition": "form-data; name=\"content\""}, content_disposition: ContentDisposition { field_name: Some("content"), file_name: None }, content_type: None, idx: 0 }
+[12:17:03:28:13 Thread#4/TRACE] >> multipart field: Field { state: Mutex { data: MultipartState { buffer: StreamBuffer, boundary: "PieBoundary123456789012345678901234567", stage: ReadingFieldData, next_field_idx: 2, curr_field_name: Some("reply_to_id"), curr_field_size_limit: 2097152, curr_field_size_counter: 0, constraints: Constraints { size_limit: SizeLimit { whole_stream: 2097152, per_field: 2097152, field_map: {} }, allowed_fields: None } }}, done: false, headers: {"content-disposition": "form-data; name=\"reply_to_id\""}, content_disposition: ContentDisposition { field_name: Some("reply_to_id"), file_name: None }, content_type: None, idx: 1 }
+[12:17:03:28:13 Thread#4/TRACE] >> multipart field: Field { state: Mutex { data: MultipartState { buffer: StreamBuffer, boundary: "PieBoundary123456789012345678901234567", stage: ReadingFieldData, next_field_idx: 3, curr_field_name: Some("attachments"), curr_field_size_limit: 2097152, curr_field_size_counter: 0, constraints: Constraints { size_limit: SizeLimit { whole_stream: 2097152, per_field: 2097152, field_map: {} }, allowed_fields: None } }}, done: false, headers: {"content-disposition": "form-data; name=\"attachments\""}, content_disposition: ContentDisposition { field_name: Some("attachments"), file_name: None }, content_type: None, idx: 2 }
+[12:17:03:28:13 Thread#4/INFO] >> Creating message in channel: hi
+[12:17:03:28:13 Thread#4/INFO] >> Message contents  "Hello world!"
+[12:17:03:28:13 Thread#4/INFO] >> Outcome: Success(200 OK)
+[12:17:03:28:13 Thread#4/DEBUG] >> sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "15",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:28:13 Thread#4/INFO] >> Response succeeded.
+[12:17:03:28:13 Thread#4/TRACE] >> encode_headers;
+[12:17:03:28:13 Thread#4/TRACE] >> -> encode_headers;
+[12:17:03:28:13 Thread#4/TRACE] >> Server::encode status=200, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:28:13 Thread#4/TRACE] >> <- encode_headers;
+[12:17:03:28:13 Thread#4/TRACE] >> -- encode_headers;
+[12:17:03:28:13 Thread#4/TRACE] >> sized write, len = 15
+[12:17:03:28:13 Thread#4/TRACE] >> buffer.queue self.len=235 buf.len=15
+[12:17:03:28:13 Thread#4/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:28:13 Thread#4/DEBUG] >> flushed 250 bytes
+[12:17:03:28:13 Thread#4/TRACE] >> State::close()
+[12:17:03:28:13 Thread#4/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:28:13 Thread#4/TRACE] >> shut down IO complete
+[12:17:03:28:14 Thread#4/TRACE] >> Conn::read_head
+[12:17:03:28:14 Thread#4/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:03:28:14 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:28:14 Thread#14/TRACE] >> received 749 bytes
+[12:17:03:28:14 Thread#14/TRACE] >> parse_headers;
+[12:17:03:28:14 Thread#14/TRACE] >> -> parse_headers;
+[12:17:03:28:14 Thread#14/TRACE] >> Request.parse bytes=749
+[12:17:03:28:14 Thread#14/TRACE] >> Request.parse Complete(398)
+[12:17:03:28:14 Thread#14/TRACE] >> <- parse_headers;
+[12:17:03:28:14 Thread#14/TRACE] >> -- parse_headers;
+[12:17:03:28:14 Thread#14/DEBUG] >> parsed 6 headers
+[12:17:03:28:14 Thread#14/DEBUG] >> incoming body is content-length (351 bytes)
+[12:17:03:28:14 Thread#14/TRACE] >> remote disabling keep-alive
+[12:17:03:28:14 Thread#14/TRACE] >> decode; state=Length(351)
+[12:17:03:28:14 Thread#14/DEBUG] >> incoming body completed
+[12:17:03:28:14 Thread#14/DEBUG] >> received request: Request {
+    method: POST,
+    uri: /servers/test/channels/hi/messages,
+    version: HTTP/1.1,
+    headers: {
+        "host": "localhost:8000",
+        "user-agent": "HTTPie",
+        "content-type": "multipart/form-data; boundary=PieBoundary123456789012345678901234567",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        "content-length": "351",
+        "connection": "close",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:28:14 Thread#14/TRACE] >> flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Disabled }
+[12:17:03:28:14 Thread#14/INFO] >> POST /servers/test/channels/hi/messages multipart/form-data:
+[12:17:03:28:14 Thread#14/INFO] >> Matched: (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:03:28:14 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:28:14 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:28:14 Thread#14/WARN] >> Note: Using `String` as a parameter type is inefficient. Use `&str` instead.
+[12:17:03:28:14 Thread#14/INFO] >> `String` is used a parameter guard in api-server/src/api/mod.rs:301.
+[12:17:03:28:14 Thread#14/TRACE] >> multipart field: Field { state: Mutex { data: MultipartState { buffer: StreamBuffer, boundary: "PieBoundary123456789012345678901234567", stage: ReadingFieldData, next_field_idx: 1, curr_field_name: Some("content"), curr_field_size_limit: 2097152, curr_field_size_counter: 0, constraints: Constraints { size_limit: SizeLimit { whole_stream: 2097152, per_field: 2097152, field_map: {} }, allowed_fields: None } }}, done: false, headers: {"content-disposition": "form-data; name=\"content\""}, content_disposition: ContentDisposition { field_name: Some("content"), file_name: None }, content_type: None, idx: 0 }
+[12:17:03:28:14 Thread#14/TRACE] >> multipart field: Field { state: Mutex { data: MultipartState { buffer: StreamBuffer, boundary: "PieBoundary123456789012345678901234567", stage: ReadingFieldData, next_field_idx: 2, curr_field_name: Some("reply_to_id"), curr_field_size_limit: 2097152, curr_field_size_counter: 0, constraints: Constraints { size_limit: SizeLimit { whole_stream: 2097152, per_field: 2097152, field_map: {} }, allowed_fields: None } }}, done: false, headers: {"content-disposition": "form-data; name=\"reply_to_id\""}, content_disposition: ContentDisposition { field_name: Some("reply_to_id"), file_name: None }, content_type: None, idx: 1 }
+[12:17:03:28:14 Thread#14/TRACE] >> multipart field: Field { state: Mutex { data: MultipartState { buffer: StreamBuffer, boundary: "PieBoundary123456789012345678901234567", stage: ReadingFieldData, next_field_idx: 3, curr_field_name: Some("attachments"), curr_field_size_limit: 2097152, curr_field_size_counter: 0, constraints: Constraints { size_limit: SizeLimit { whole_stream: 2097152, per_field: 2097152, field_map: {} }, allowed_fields: None } }}, done: false, headers: {"content-disposition": "form-data; name=\"attachments\""}, content_disposition: ContentDisposition { field_name: Some("attachments"), file_name: None }, content_type: None, idx: 2 }
+[12:17:03:28:14 Thread#14/INFO] >> Creating message in channel: hi
+[12:17:03:28:14 Thread#14/INFO] >> Message contents  "Hello world!"
+[12:17:03:28:14 Thread#14/INFO] >> Outcome: Success(200 OK)
+[12:17:03:28:14 Thread#14/DEBUG] >> sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "content-length": "15",
+    },
+    body: Body(
+        Streaming,
+    ),
+}
+[12:17:03:28:14 Thread#14/INFO] >> Response succeeded.
+[12:17:03:28:14 Thread#14/TRACE] >> encode_headers;
+[12:17:03:28:14 Thread#14/TRACE] >> -> encode_headers;
+[12:17:03:28:14 Thread#14/TRACE] >> Server::encode status=200, body=Some(Unknown), req_method=Some(POST)
+[12:17:03:28:14 Thread#14/TRACE] >> <- encode_headers;
+[12:17:03:28:14 Thread#14/TRACE] >> -- encode_headers;
+[12:17:03:28:14 Thread#14/TRACE] >> sized write, len = 15
+[12:17:03:28:14 Thread#14/TRACE] >> buffer.queue self.len=235 buf.len=15
+[12:17:03:28:14 Thread#14/TRACE] >> no more write body allowed, user body is_end_stream = false
+[12:17:03:28:14 Thread#14/DEBUG] >> flushed 250 bytes
+[12:17:03:28:14 Thread#14/TRACE] >> State::close()
+[12:17:03:28:14 Thread#14/TRACE] >> flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[12:17:03:28:14 Thread#14/TRACE] >> shut down IO complete
+[12:17:03:46:22 Thread#14/TRACE] >> Conn::read_head
+[12:17:03:46:22 Thread#14/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:04:46:59 Thread#4/WARN] >> Received SIGINT. Requesting shutdown.
+[12:17:04:46:59 Thread#1/INFO] >> Shutdown requested. Waiting for pending I/O...
+[12:17:04:46:59 Thread#4/TRACE] >> Conn::read_head
+[12:17:04:46:59 Thread#1/DEBUG] >> signal received, starting graceful shutdown
+[12:17:04:46:59 Thread#4/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Busy }
+[12:17:04:46:59 Thread#4/TRACE] >> disable_keep_alive; in-progress connection
+[12:17:04:46:59 Thread#4/TRACE] >> Conn::read_head
+[12:17:04:46:59 Thread#4/TRACE] >> flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Disabled }
+[12:17:04:47:01 Thread#14/TRACE] >> Conn::read_head
+[12:17:04:47:01 Thread#14/TRACE] >> State::close_read()
+[12:17:04:47:01 Thread#14/DEBUG] >> read eof
+[12:17:04:47:01 Thread#14/TRACE] >> State::close_write()
+[12:17:04:47:01 Thread#14/TRACE] >> State::close_read()
+[12:17:04:47:01 Thread#14/TRACE] >> State::close_write()
+[12:17:04:47:01 Thread#14/DEBUG] >> error writing: IO driver has terminated
+[12:17:04:47:01 Thread#14/DEBUG] >> connection error: error writing a body to connection: IO driver has terminated
+[12:17:04:47:01 Thread#1/INFO] >> Graceful shutdown completed successfully.
+[12:17:04:47:41 Thread#1/INFO] >> Running server
+[12:17:04:47:41 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:04:47:41 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    use_http: false,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:04:47:41 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:04:47:41 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:04:47:41 Thread#1/INFO] >> port: 8000
+[12:17:04:47:41 Thread#1/INFO] >> workers: 16
+[12:17:04:47:41 Thread#1/INFO] >> max blocking threads: 512
+[12:17:04:47:41 Thread#1/INFO] >> ident: Rocket
+[12:17:04:47:41 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:04:47:41 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:04:47:41 Thread#1/INFO] >> temp dir: /tmp
+[12:17:04:47:41 Thread#1/INFO] >> http/2: true
+[12:17:04:47:41 Thread#1/INFO] >> keep-alive: 5s
+[12:17:04:47:41 Thread#1/INFO] >> tls: disabled
+[12:17:04:47:41 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:04:47:41 Thread#1/INFO] >> log level: normal
+[12:17:04:47:41 Thread#1/INFO] >> cli colors: true
+[12:17:04:47:41 Thread#1/INFO] >> 📬 Routes:
+[12:17:04:47:41 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:04:47:41 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:04:47:41 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:04:47:41 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:04:47:41 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:04:47:41 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:04:47:41 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:04:47:41 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:04:47:41 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:04:47:41 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:04:47:41 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:04:47:41 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:04:47:41 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:04:47:41 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:04:47:41 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:04:47:41 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:04:47:41 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:04:47:41 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:04:47:41 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:04:47:41 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:04:47:41 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:04:47:41 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:04:47:41 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:04:47:41 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:04:47:41 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:04:47:41 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:04:47:41 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:04:47:41 Thread#1/INFO] >> 📡 Fairings:
+[12:17:04:47:41 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:04:47:41 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:04:47:41 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:04:47:41 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:04:47:41 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:04:47:41 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:04:47:41 Thread#1/ERR] >> Starting DB on port 8000
+[12:17:04:55:21 Thread#1/ERR] >> Could not serialize configuration: missing field `db_port`
+[12:17:04:55:21 Thread#1/ERR] >> An error has occured, assuming we are not initalized: missing field `db_port`
+[12:17:04:55:21 Thread#1/ERR] >> Could not serialize configuration: missing field `db_port`
+[12:17:04:56:00 Thread#1/ERR] >> Could not serialize configuration: missing field `db_port`
+[12:17:04:56:00 Thread#1/ERR] >> An error has occured, assuming we are not initalized: missing field `db_port`
+[12:17:04:56:00 Thread#1/ERR] >> Could not serialize configuration: missing field `db_port`
+[12:17:04:56:25 Thread#1/DEBUG] >> config: port: 8000
+db_url: http://0.0.0.0/
+db_port: 3306
+use_http: false
+log_level: WARN
+log_path: './'
+env_override: true
+
+[12:17:04:56:25 Thread#1/DEBUG] >> Full file path: "/home/chance/.local/share/occult/server/config.server.yml"
+[12:17:04:56:30 Thread#1/INFO] >> Running server
+[12:17:04:56:30 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "http",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Ipv4(
+                0.0.0.0,
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    use_http: false,
+    log_level: Warn,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:04:56:30 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "http",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Ipv4(
+                0.0.0.0,
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    use_http: false,
+    log_level: Warn,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:04:56:30 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:04:56:30 Thread#1/ERR] >> Starting DB on port Port(
+    3306,
+)
+[12:17:04:58:01 Thread#1/INFO] >> Running server
+[12:17:04:58:01 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "http",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Ipv4(
+                0.0.0.0,
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    use_http: false,
+    log_level: Warn,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:04:58:01 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "http",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Ipv4(
+                0.0.0.0,
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    use_http: false,
+    log_level: Warn,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:04:58:01 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:04:58:01 Thread#1/ERR] >> Starting DB on port Port(
+    3306,
+)
+[12:17:05:06:55 Thread#1/INFO] >> Running server
+[12:17:05:06:55 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "http",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Ipv4(
+                0.0.0.0,
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    use_http: false,
+    log_level: Warn,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:05:06:55 Thread#1/DEBUG] >> server_config = ServerConfig {
+    port: 8000,
+    db_url: Url {
+        scheme: "http",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Ipv4(
+                0.0.0.0,
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    use_http: false,
+    log_level: Warn,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+}
+[12:17:05:06:55 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:05:06:55 Thread#1/ERR] >> Starting DB on port Port(
+    3306,
+)
+[12:17:06:21:33 Thread#1/INFO] >> Running server
+[12:17:06:21:33 Thread#1/ERR] >> Could not serialize configuration: missing field `http_port`
+[12:17:06:22:09 Thread#1/INFO] >> Running server
+[12:17:06:22:09 Thread#1/ERR] >> Could not serialize configuration: missing field `http_port`
+[12:17:06:23:30 Thread#1/DEBUG] >> config: http_port: 8000
+use_http: true
+log_level: TRACE
+log_path: './'
+env_override: true
+db_url: https://example.com/
+db_port: 3306
+db_user: occult
+db_pass: occult
+db_name: occult_db
+
+[12:17:06:23:30 Thread#1/DEBUG] >> Full file path: "/home/chance/.local/share/occult/server/config.server.yml"
+[12:17:06:23:30 Thread#1/DEBUG] >> server_config = ServerConfig {
+    http_port: Port(
+        8000,
+    ),
+    use_http: true,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    db_user: "occult",
+    db_pass: "occult",
+    db_name: "occult_db",
+}
+[12:17:06:23:30 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:06:23:30 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:06:23:30 Thread#1/INFO] >> port: 8000
+[12:17:06:23:30 Thread#1/INFO] >> workers: 16
+[12:17:06:23:30 Thread#1/INFO] >> max blocking threads: 512
+[12:17:06:23:30 Thread#1/INFO] >> ident: Rocket
+[12:17:06:23:30 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:06:23:30 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:06:23:30 Thread#1/INFO] >> temp dir: /tmp
+[12:17:06:23:30 Thread#1/INFO] >> http/2: true
+[12:17:06:23:30 Thread#1/INFO] >> keep-alive: 5s
+[12:17:06:23:30 Thread#1/INFO] >> tls: disabled
+[12:17:06:23:30 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:06:23:30 Thread#1/INFO] >> log level: normal
+[12:17:06:23:30 Thread#1/INFO] >> cli colors: true
+[12:17:06:23:30 Thread#1/INFO] >> 📬 Routes:
+[12:17:06:23:30 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:06:23:30 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:06:23:30 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:06:23:30 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:06:23:30 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:06:23:30 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:06:23:30 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:06:23:30 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:06:23:30 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:06:23:30 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:06:23:30 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:06:23:30 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:06:23:30 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:06:23:30 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:06:23:30 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:06:23:30 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:06:23:30 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:06:23:30 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:06:23:30 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:06:23:30 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:06:23:30 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:06:23:30 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:06:23:30 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:06:23:30 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:06:23:30 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:06:23:30 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:23:30 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:23:30 Thread#1/INFO] >> 📡 Fairings:
+[12:17:06:23:30 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:06:23:30 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:06:23:30 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:06:23:30 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:06:23:30 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:06:23:30 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:06:23:30 Thread#1/ERR] >> Starting DB on port Port(
+    3306,
+)
+[12:17:06:25:29 Thread#1/INFO] >> Running server
+[12:17:06:25:29 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    http_port: Port(
+        8000,
+    ),
+    use_http: true,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    db_user: "occult",
+    db_pass: "occult",
+    db_name: "occult_db",
+}
+[12:17:06:25:29 Thread#1/DEBUG] >> server_config = ServerConfig {
+    http_port: Port(
+        8000,
+    ),
+    use_http: true,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+    db_url: Url {
+        scheme: "https",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: Some(
+            Domain(
+                "example.com",
+            ),
+        ),
+        port: None,
+        path: "/",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    db_user: "occult",
+    db_pass: "occult",
+    db_name: "occult_db",
+}
+[12:17:06:25:30 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:06:25:30 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:06:25:30 Thread#1/INFO] >> port: 8000
+[12:17:06:25:30 Thread#1/INFO] >> workers: 16
+[12:17:06:25:30 Thread#1/INFO] >> max blocking threads: 512
+[12:17:06:25:30 Thread#1/INFO] >> ident: Rocket
+[12:17:06:25:30 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:06:25:30 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:06:25:30 Thread#1/INFO] >> temp dir: /tmp
+[12:17:06:25:30 Thread#1/INFO] >> http/2: true
+[12:17:06:25:30 Thread#1/INFO] >> keep-alive: 5s
+[12:17:06:25:30 Thread#1/INFO] >> tls: disabled
+[12:17:06:25:30 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:06:25:30 Thread#1/INFO] >> log level: normal
+[12:17:06:25:30 Thread#1/INFO] >> cli colors: true
+[12:17:06:25:30 Thread#1/INFO] >> 📬 Routes:
+[12:17:06:25:30 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:06:25:30 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:06:25:30 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:06:25:30 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:06:25:30 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:06:25:30 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:06:25:30 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:06:25:30 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:06:25:30 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:06:25:30 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:06:25:30 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:06:25:30 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:06:25:30 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:06:25:30 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:06:25:30 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:06:25:30 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:06:25:30 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:06:25:30 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:06:25:30 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:06:25:30 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:06:25:30 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:06:25:30 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:06:25:30 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:06:25:30 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:06:25:30 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:06:25:30 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:25:30 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:25:30 Thread#1/INFO] >> 📡 Fairings:
+[12:17:06:25:30 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:06:25:30 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:06:25:30 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:06:25:30 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:06:25:30 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:06:25:30 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:06:25:30 Thread#1/ERR] >> Starting DB on port Port(
+    3306,
+)
+[12:17:06:26:10 Thread#1/INFO] >> Running server
+[12:17:06:26:10 Thread#1/ERR] >> Could not serialize configuration: db_url: relative URL without a base: "localhost" at line 6 column 9
+[12:17:06:26:28 Thread#1/INFO] >> Running server
+[12:17:06:26:28 Thread#1/ERR] >> Could not serialize configuration: db_url: relative URL without a base: "localhost" at line 6 column 9
+[12:17:06:26:35 Thread#1/INFO] >> Running server
+[12:17:06:26:35 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    http_port: Port(
+        8000,
+    ),
+    use_http: true,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+    db_url: Url {
+        scheme: "localhost",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: None,
+        port: None,
+        path: "",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    db_user: "occult",
+    db_pass: "occult",
+    db_name: "occult_db",
+}
+[12:17:06:26:35 Thread#1/DEBUG] >> server_config = ServerConfig {
+    http_port: Port(
+        8000,
+    ),
+    use_http: true,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+    db_url: Url {
+        scheme: "localhost",
+        cannot_be_a_base: false,
+        username: "",
+        password: None,
+        host: None,
+        port: None,
+        path: "",
+        query: None,
+        fragment: None,
+    },
+    db_port: Port(
+        3306,
+    ),
+    db_user: "occult",
+    db_pass: "occult",
+    db_name: "occult_db",
+}
+[12:17:06:26:35 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:06:26:35 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:06:26:35 Thread#1/INFO] >> port: 8000
+[12:17:06:26:35 Thread#1/INFO] >> workers: 16
+[12:17:06:26:35 Thread#1/INFO] >> max blocking threads: 512
+[12:17:06:26:35 Thread#1/INFO] >> ident: Rocket
+[12:17:06:26:35 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:06:26:35 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:06:26:35 Thread#1/INFO] >> temp dir: /tmp
+[12:17:06:26:35 Thread#1/INFO] >> http/2: true
+[12:17:06:26:35 Thread#1/INFO] >> keep-alive: 5s
+[12:17:06:26:35 Thread#1/INFO] >> tls: disabled
+[12:17:06:26:35 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:06:26:35 Thread#1/INFO] >> log level: normal
+[12:17:06:26:35 Thread#1/INFO] >> cli colors: true
+[12:17:06:26:35 Thread#1/INFO] >> 📬 Routes:
+[12:17:06:26:35 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:06:26:35 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:06:26:35 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:06:26:35 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:06:26:35 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:06:26:35 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:06:26:35 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:06:26:35 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:06:26:35 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:06:26:35 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:06:26:35 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:06:26:35 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:06:26:35 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:06:26:35 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:06:26:35 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:06:26:35 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:06:26:35 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:06:26:35 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:06:26:35 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:06:26:35 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:06:26:35 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:06:26:35 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:06:26:35 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:06:26:35 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:06:26:35 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:06:26:35 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:26:35 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:26:35 Thread#1/INFO] >> 📡 Fairings:
+[12:17:06:26:35 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:06:26:35 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:06:26:35 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:06:26:35 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:06:26:35 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:06:26:35 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:06:26:35 Thread#1/ERR] >> Starting DB on port Port(
+    3306,
+)
+[12:17:06:26:35 Thread#1/DEBUG] >> not performing TLS upgrade: TLS support not compiled in
+[12:17:06:28:43 Thread#1/INFO] >> Running server
+[12:17:06:28:43 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    http_port: Port(
+        8000,
+    ),
+    use_http: true,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+    db_url: "localhost://",
+    db_port: Port(
+        3306,
+    ),
+    db_user: "occult",
+    db_pass: "occult",
+    db_name: "occult_db",
+}
+[12:17:06:28:43 Thread#1/DEBUG] >> server_config = ServerConfig {
+    http_port: Port(
+        8000,
+    ),
+    use_http: true,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+    db_url: "localhost://",
+    db_port: Port(
+        3306,
+    ),
+    db_user: "occult",
+    db_pass: "occult",
+    db_name: "occult_db",
+}
+[12:17:06:28:43 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:06:28:43 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:06:28:43 Thread#1/INFO] >> port: 8000
+[12:17:06:28:43 Thread#1/INFO] >> workers: 16
+[12:17:06:28:43 Thread#1/INFO] >> max blocking threads: 512
+[12:17:06:28:43 Thread#1/INFO] >> ident: Rocket
+[12:17:06:28:43 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:06:28:43 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:06:28:43 Thread#1/INFO] >> temp dir: /tmp
+[12:17:06:28:43 Thread#1/INFO] >> http/2: true
+[12:17:06:28:43 Thread#1/INFO] >> keep-alive: 5s
+[12:17:06:28:43 Thread#1/INFO] >> tls: disabled
+[12:17:06:28:43 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:06:28:43 Thread#1/INFO] >> log level: normal
+[12:17:06:28:43 Thread#1/INFO] >> cli colors: true
+[12:17:06:28:43 Thread#1/INFO] >> 📬 Routes:
+[12:17:06:28:43 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:06:28:43 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:06:28:43 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:06:28:43 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:06:28:43 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:06:28:43 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:06:28:43 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:06:28:43 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:06:28:43 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:06:28:43 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:06:28:43 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:06:28:43 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:06:28:43 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:06:28:43 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:06:28:43 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:06:28:43 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:06:28:43 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:06:28:43 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:06:28:43 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:06:28:43 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:06:28:43 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:06:28:43 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:06:28:43 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:06:28:43 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:06:28:43 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:06:28:43 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:28:43 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:28:43 Thread#1/INFO] >> 📡 Fairings:
+[12:17:06:28:43 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:06:28:43 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:06:28:43 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:06:28:43 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:06:28:43 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:06:28:43 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:06:28:43 Thread#1/ERR] >> Starting DB on port Port(
+    3306,
+)
+[12:17:06:28:43 Thread#1/DEBUG] >> not performing TLS upgrade: TLS support not compiled in
+[12:17:06:31:06 Thread#1/INFO] >> Running server
+[12:17:06:31:06 Thread#1/DEBUG] >> server config has been serialized: Config: ServerConfig {
+    http_port: Port(
+        8000,
+    ),
+    use_http: true,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+    db_url: "localhost",
+    db_port: Port(
+        3306,
+    ),
+    db_user: "occult",
+    db_pass: "occult",
+    db_name: "occult_db",
+}
+[12:17:06:31:06 Thread#1/DEBUG] >> server_config = ServerConfig {
+    http_port: Port(
+        8000,
+    ),
+    use_http: true,
+    log_level: Trace,
+    log_path: Some(
+        "./",
+    ),
+    env_override: true,
+    db_url: "localhost",
+    db_port: Port(
+        3306,
+    ),
+    db_user: "occult",
+    db_pass: "occult",
+    db_name: "occult_db",
+}
+[12:17:06:31:06 Thread#1/INFO] >> 🔧 Configured for debug.
+[12:17:06:31:06 Thread#1/INFO] >> address: 0.0.0.0
+[12:17:06:31:06 Thread#1/INFO] >> port: 8000
+[12:17:06:31:06 Thread#1/INFO] >> workers: 16
+[12:17:06:31:06 Thread#1/INFO] >> max blocking threads: 512
+[12:17:06:31:06 Thread#1/INFO] >> ident: Rocket
+[12:17:06:31:06 Thread#1/INFO] >> IP header: X-Real-IP
+[12:17:06:31:06 Thread#1/INFO] >> limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB
+[12:17:06:31:06 Thread#1/INFO] >> temp dir: /tmp
+[12:17:06:31:06 Thread#1/INFO] >> http/2: true
+[12:17:06:31:06 Thread#1/INFO] >> keep-alive: 5s
+[12:17:06:31:06 Thread#1/INFO] >> tls: disabled
+[12:17:06:31:06 Thread#1/INFO] >> shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s
+[12:17:06:31:06 Thread#1/INFO] >> log level: normal
+[12:17:06:31:06 Thread#1/INFO] >> cli colors: true
+[12:17:06:31:06 Thread#1/INFO] >> 📬 Routes:
+[12:17:06:31:06 Thread#1/INFO] >> (get_servers) GET /servers
+[12:17:06:31:06 Thread#1/INFO] >> (create_server) POST /servers
+[12:17:06:31:06 Thread#1/INFO] >> (get_current_user) GET /users/@me
+[12:17:06:31:06 Thread#1/INFO] >> (update_current_user) PATCH /users/@me
+[12:17:06:31:06 Thread#1/INFO] >> (login) POST /auth/login application/json
+[12:17:06:31:06 Thread#1/INFO] >> (register) POST /auth/register application/json
+[12:17:06:31:06 Thread#1/INFO] >> (get_user) GET /users/<user_id>
+[12:17:06:31:06 Thread#1/INFO] >> (get_server) GET /servers/<server_id>
+[12:17:06:31:06 Thread#1/INFO] >> (update_server) PATCH /servers/<server_id>
+[12:17:06:31:06 Thread#1/INFO] >> (delete_server) DELETE /servers/<server_id>
+[12:17:06:31:06 Thread#1/INFO] >> (get_channel) GET /channels/<channel_id>
+[12:17:06:31:06 Thread#1/INFO] >> (update_channel) PATCH /channels/<channel_id> application/json
+[12:17:06:31:06 Thread#1/INFO] >> (delete_channel) DELETE /channels/<channel_id>
+[12:17:06:31:06 Thread#1/INFO] >> (join_server) POST /users/@me/servers application/json
+[12:17:06:31:06 Thread#1/INFO] >> (create_invite) POST /servers/<server_id>/invites application/json
+[12:17:06:31:06 Thread#1/INFO] >> (get_channels) GET /servers/<server_id>/channels
+[12:17:06:31:06 Thread#1/INFO] >> (create_channel) POST /servers/<server_id>/channels application/json
+[12:17:06:31:06 Thread#1/INFO] >> (send_typing_indicator) POST /channels/<channel_id>/typing
+[12:17:06:31:06 Thread#1/INFO] >> (get_messages) GET /channels/<channel_id>/messages?<before>&<after>&<limit>
+[12:17:06:31:06 Thread#1/INFO] >> (upload_attachments) POST /channels/<channel_id>/attachments
+[12:17:06:31:06 Thread#1/INFO] >> (pin_message) PUT /channels/<channel_id>/pins/<message_id>
+[12:17:06:31:06 Thread#1/INFO] >> (unpin_message) DELETE /channels/<channel_id>/pins/<message_id>
+[12:17:06:31:06 Thread#1/INFO] >> (update_message) PATCH /channels/<channel_id>/messages/<message_id> application/json
+[12:17:06:31:06 Thread#1/INFO] >> (delete_message) DELETE /channels/<channel_id>/messages/<message_id>
+[12:17:06:31:06 Thread#1/INFO] >> (create_message) POST /servers/<server_id>/channels/<channel_id>/messages
+[12:17:06:31:06 Thread#1/INFO] >> (add_reaction) PUT /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:31:06 Thread#1/INFO] >> (remove_reaction) DELETE /channels/<channel_id>/reactions/<message_id>/<emoji>
+[12:17:06:31:06 Thread#1/INFO] >> 📡 Fairings:
+[12:17:06:31:06 Thread#1/INFO] >> Shield (liftoff, response, singleton)
+[12:17:06:31:06 Thread#1/INFO] >> 🛡️ Shield:
+[12:17:06:31:06 Thread#1/INFO] >> X-Content-Type-Options: nosniff
+[12:17:06:31:06 Thread#1/INFO] >> X-Frame-Options: SAMEORIGIN
+[12:17:06:31:06 Thread#1/INFO] >> Permissions-Policy: interest-cohort=()
+[12:17:06:31:06 Thread#1/WARN] >> 🚀 Rocket has launched from http://0.0.0.0:8000
+[12:17:06:31:06 Thread#1/ERR] >> Starting DB on port Port(
+    3306,
+)
+[12:17:06:31:06 Thread#1/DEBUG] >> not performing TLS upgrade: TLS support not compiled in
+[12:17:06:31:06 Thread#1/DEBUG] >> summary="SET sql_mode=(SELECT CONCAT(@@sql_mode, ',PIPES_AS_CONCAT,NO_ENGINE_SUBSTITUTION')),time_zone='+00:00',NAMES …" db.statement="\n\nSET\n  sql_mode =(\n    SELECT\n      CONCAT(\n        @ @sql_mode,\n        ',PIPES_AS_CONCAT,NO_ENGINE_SUBSTITUTION'\n      )\n  ),\n  time_zone = '+00:00',\n  NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;\n" rows_affected=0 rows_returned=0 elapsed=26.802824ms elapsed_secs=0.026802824
+[12:17:06:33:31 Thread#3/WARN] >> Received SIGINT. Requesting shutdown.
+[12:17:06:33:31 Thread#1/INFO] >> Shutdown requested. Waiting for pending I/O...
+[12:17:06:33:31 Thread#1/DEBUG] >> signal received, starting graceful shutdown
+[12:17:06:33:31 Thread#1/INFO] >> Graceful shutdown completed successfully.

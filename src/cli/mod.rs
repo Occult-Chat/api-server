@@ -100,7 +100,9 @@ pub async fn run_cli() -> Result<()> {
             debug!("server_config = {config:#?}");
             let listener = start_listener(&config);
             let db = start_db(&config);
-            tokio::join!(listener, db).0.expect("Failed");
+            tokio::join!(listener, db).0.unwrap_or_else(|e| loop {
+                
+            });
             Ok(())
         }
         None => {
